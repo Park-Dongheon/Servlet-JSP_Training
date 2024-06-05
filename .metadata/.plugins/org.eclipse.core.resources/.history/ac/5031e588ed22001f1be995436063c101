@@ -1,0 +1,34 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%!
+public String gugudan(int dan) {
+	StringBuilder result = new StringBuilder();
+	for(int i = 1; i < 10; i++) {
+		result.append(dan).append("*").append(i).append("=").append(dan * i).append("<br />");
+	}
+	return result.toString();
+}
+%>    
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>구구단 결과</title>
+</head>
+<body>
+<%
+int result;
+
+try {
+	int dan = Integer.parseInt(request.getParameter("dan"));
+	
+	result = gugudan(dan);			
+} catch (Exception e) {
+	result = 0;
+}
+%>
+<%= result %> <br />
+
+</body>
+</html>

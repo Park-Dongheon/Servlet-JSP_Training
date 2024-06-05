@@ -1,0 +1,39 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%!			// 선언부(메서드 선언)
+public int add(int num1, int num2) {
+	return num1 + num2;
+}
+public int sub(int num1, int num2) {
+	return num1 - num2;
+}
+public int mul(int num1, int num2) {
+	return num1 * num2;
+}
+public int div(int num1, int num2) {
+	return num1 / num2;
+}
+%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>스크립트 요소</title>
+</head>
+<body>
+<%
+int result1 = add(10, 20);
+int result2 = sub(10, 20);
+int result3 = mul(10, 20);
+int result4 = div(10, 20);
+%>
+덧셈 결과 1 : <%= result %> <br />			<!-- 표현식(변수) -->
+덧셈 결과 2 : <%= add(30, 40) %>		<!-- 표현식(메서드 호출) -->
+빼기 결과 1 : <%= result %> <br />			<!-- 표현식(변수) -->
+빼기 결과 2 : <%= add(30, 40) %>		<!-- 표현식(메서드 호출) -->
+곱하기 결과 1 : <%= result %> <br />			<!-- 표현식(변수) -->
+곱하기 결과 2 : <%= add(30, 40) %>		<!-- 표현식(메서드 호출) -->
+나누기 결과 1 : <%= result %> <br />			<!-- 표현식(변수) -->
+나누기 결과 2 : <%= add(30, 40) %>		<!-- 표현식(메서드 호출) -->
+</body>
+</html>
