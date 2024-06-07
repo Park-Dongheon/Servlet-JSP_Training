@@ -21,6 +21,7 @@ String result;
 //int dan = 2;
 
 try {
+	// http://localhost:8080/missionJSP/Gugudan1.jsp?dan=2
 	int dan = Integer.parseInt(request.getParameter("dan"));
 	
 	result = gugudan(dan);			
