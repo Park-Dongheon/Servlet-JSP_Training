@@ -1,0 +1,52 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%!
+public String gugudan(String dir) {
+	StringBuffer result = new StringBuffer();
+	result.append("<br/>");
+	if("hor".equals(dir)) {
+		for (int i = 1; i < 10; i++) {
+			for(int j = 1; j < 10; j++) {
+				result.append(j).append("*").append(i).append("=").append(i * j);
+                if(j != 9) {
+                    result.append(" ");
+                    result.toString().replace(" ", "                ");
+                }
+			}
+            result.append("<br/>");
+		}
+	}
+	if("ver".equals(dir)) {
+		for (int i = 1; i < 10; i++) {
+			for(int j = 1; j < 10; j++) {
+				result.append(i).append("*").append(j).append("=").append(i * j).append("<br/>");
+			}
+			result.append("<br/>");
+		}
+	}
+	return result.toString();
+}
+%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<titleng().>구구단</title>
+</head>
+<body>
+<%
+String result;
+
+try {
+	// http://localhost:8080/missionJSP/Gugudan1.jsp?dan=2
+	String dir = request.getParameter("dir");
+	
+	result = gugudan(dir);			
+} catch (Exception e) {
+	result = "Invalid";
+}
+%>
+<%= result %>
+
+</body>
+</html>
