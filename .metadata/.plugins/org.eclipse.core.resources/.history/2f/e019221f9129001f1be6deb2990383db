@@ -1,0 +1,53 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>구구단</title>
+</head>
+<body>
+	<%
+	//col 변수 선언 및 초기화
+	int col = 2;
+	try {
+		// URL 파라미터 'col' 값을 받아와서 정수로 변환
+		col = Integer.parseInt(request.getParameter("col"));
+
+	} catch (Exception e) {
+		// 예외 처리: URL 파라미터 'col' 값이 정수로 변환할 수 없는 경우
+		// col 값은 기본적으로 2로 유지됨
+	} 
+	%>
+	<!-- 구구단 제목 헤더 설정 -->
+	<h2 style="width:<%=col * 100%>px; text-align:center;">구구단3</h2>
+	
+	<!-- 그리드 레이아웃 설정 -->
+	<div style="display:grid;  grid-template-columns: repeat(<%=col%>, 1fr);">
+		<%
+		for (int i = 2; i <= 9; i += col) {
+			for (int k = 0; k <= 9; k++) {
+				for (int j = 0; j < col; j++) {
+		%>
+		<div>
+			<%
+			if (9 < i + j) {
+				out.print("");
+			} else {
+				if (k == 0) {
+					out.print("<h3>" + (i + j) + "단</h3>");
+				} else {
+					out.print(String.format("%d * %d = %d<br>", i + j, k, (i + j) * k));
+				}
+			}
+			%>
+		</div>
+		<%
+		}
+		}
+		}
+		%>
+	</div>
+</body>
+</html>

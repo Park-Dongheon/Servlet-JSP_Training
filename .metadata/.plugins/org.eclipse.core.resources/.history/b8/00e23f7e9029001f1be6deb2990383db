@@ -1,0 +1,49 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>구구단</title>
+</head>
+<body>
+<%
+
+
+
+try {
+	// HTTP 요청을 통해 전달된 dan 파라미터 값 가져오기
+	// ex) http://localhost:8080/missionJSP/Gugudan1.jsp?dan=2
+	int col = Integer.parseInt(request.getParameter("col"));
+
+} catch (Exception e) {}
+%>
+	<h2 style="width:<%=col * 100%>px; text-align:center;">구구단3</h2>
+<div style="display:grid;  grid-template-columns: repeat(<%=col%>, 1fr);">
+<%
+	for (int i = 2; i <= 9; i += col) {
+		for (int k = 0; k <= 9; k++) {
+			for (int j = 0; j < col; j++) {
+%>
+	<div>
+<%
+		if (9 < i + j) {
+			out.print("");
+		} else {
+			if (k == 0) {
+				out.print("<h3>" + (i + j) + "단</h3>");
+			} else {
+				out.print(String.format("%d * %d = %d<br>", i + j, k, (i + j) * k));
+			}
+		}
+%>
+	</div>
+<%
+			}
+		}
+	}
+%>
+</div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page import="java.io.*, jakarta.servlet.*"%>
+<%
+    // 파라미터를 가져오기
+    String gugudanType = request.getParameter("Gugudan");	// Gugudan 폼에서 선택한 구구단 유형
+    String dan = request.getParameter("dan");				// Type1에서 입력한 단 수
+    String dir = request.getParameter("dir");			// Type2에서 선택한 방향 (hor 또는 ver)
+    String col = request.getParameter("col");				// Type3에서 입력한 열 수
+    
+    // 조건문을 통해 사용자가 선택한 구구단 유형에 따라 적절한 JSP 파일로 리디렉션
+    if ("Type1".equals(gugudanType)) {
+        response.sendRedirect("Gugudan1.jsp?dan=" + dan);
+    } else if ("Type2".equals(gugudanType)) {
+        response.sendRedirect("Gugudan2.jsp?dir=" + dir);
+    } else if ("Type3".equals(gugudanType)) {
+        response.sendRedirect("Gugudan3.jsp?col=" + col);
+    } else {
+        out.println("유효한 선택이 없습니다. 다시 시도해 주세요.");
+    }
+%>

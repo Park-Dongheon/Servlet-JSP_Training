@@ -1,0 +1,21 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page import="java.io.*, jakarta.servlet.*"%>
+<%
+    // 파라미터를 가져오기
+    String gugudanType = request.getParameter("Gugudan");
+    String direction = request.getParameter("dir");
+    String col = request.getParameter("col");
+    String dan = request.getParameter("dan");
+
+    // 파라미터가 널인지 체크하고 리디렉션
+    if ("Type1".equals(gugudanType)) {
+        response.sendRedirect("Gugudan1.jsp?dan=" + dan);
+    } else if ("Type2".equals(gugudanType)) {
+        response.sendRedirect("Gugudan2.jsp?dir=" + direction);
+    } else if ("Type3".equals(gugudanType)) {
+        response.sendRedirect("Gugudan3.jsp?col=" + col);
+    } else {
+        out.println("유효한 선택이 없습니다. 다시 시도해 주세요.");
+    }
+%>

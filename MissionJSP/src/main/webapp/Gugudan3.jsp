@@ -8,40 +8,48 @@
 <title>구구단</title>
 </head>
 <body>
-	<h2 style="width:<%=col * 100 %>px; text-align:center;">구구단3</h2>
-<div style="display:grid; grid-template-colums: repeat(<%=col%>)">
-<%
-	for(int i = 2; i <= 9; i++) {
-		for(int k = 0; k <= 9; k++) {
-			for(int j = 0; j < col; j++){
-		}
-	}
-%>
-</div>
-<%
-	int col = 1;
-
+	<%
+	//col 변수 선언 및 초기화
+	int col = 2;
 	try {
+		// URL 파라미터 'col' 값을 받아와서 정수로 변환
 		col = Integer.parseInt(request.getParameter("col"));
 
-	} catch (Exception e) {}
-	
-	
-	int dan = 2;
-	out.print("<table>");
-	
-	while (dan <= 9) {
-		out.print("<tr>");
-		for (int i = 0; i < col && dan <= 9; i++, dan++) {
-			out.print("<td><h2>" + dan + "단</h2>");
-			for (int j = 1; j <= 9; j++) {
-				out.print(dan + "*" + j + "=" + (dan * j) + "<br />");				
-			}
-			out.print("</td>");
-		}
-		out.print("</tr>");		
-	}
-	out.print("</table>");
+	} catch (Exception e) {
+		// 예외 처리: URL 파라미터 'col' 값이 정수로 변환할 수 없는 경우
+		// col 값은 기본적으로 2로 유지됨
+	} 
 	%>
+	<!-- 구구단 제목 헤더 설정 -->
+	<h2 style="width:<%=col * 100%>px; text-align:center;">구구단3</h2>
+	
+	<!-- 그리드 레이아웃 설정 -->
+	<div style="display:grid;  grid-template-columns: repeat(<%=col%>);">
+		<%
+		// 구구단 출력을 위한 반복문
+		for (int i = 2; i <= 9; i += col) {			// col 만큼씩 증가하면서 반복
+			for (int k = 0; k <= 9; k++) {			// 각 단의 곱셈을 위한 반복
+				for (int j = 0; j < col; j++) {		// 한 행의 col 개수만큼 반복
+		%>
+			<div>
+		<%
+		 	// i+j가 10 이상인 경우 공백 출력, 그렇지 않으면 구구단 결과 출력
+			if (9 < i + j) {
+				out.print("");
+			} else {
+				if (k == 0) {		// 첫 번째 행에는 단의 제목을 출력
+					out.print("<h3>" + (i + j) + "단</h3>");
+				} else {			// 그 외에는 구구단 계산 결과 출력
+					out.print(String.format("%d * %d = %d<br>", i + j, k, (i + j) * k));
+				}
+			}
+		%>
+			</div>
+		<%
+				}
+			}
+		}
+		%>
+	</div>
 </body>
 </html>

@@ -3,6 +3,7 @@
 	<name>MissionJSP</name>
 	<comment></comment>
 	<projects>
+		<project>MustHaveJSP</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

@@ -1,8 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+        
     <wb-module deploy-name="MissionJSP">
+                
         <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
+                
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
+        <dependent-module archiveName="MustHaveJSP.war" deploy-path="/WEB-INF/lib" handle="module:/resource/MustHaveJSP/MustHaveJSP">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+                
         <property name="context-root" value="MissionJSP"/>
+                
         <property name="java-output-path" value="/MissionJSP/build/classes"/>
+            
     </wb-module>
+    
 </project-modules>
