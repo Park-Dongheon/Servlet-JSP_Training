@@ -1,0 +1,35 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>구구단</title>
+</head>
+<body>
+	<%
+	int col = 2;
+
+	try {
+		col = Integer.parseInt(request.getParameter("col"));
+
+	} catch (Exception e) {}
+	
+	
+	int dan = 2;
+	out.print("<table border='1'>");
+	
+	for (int n = 0; n < col; n++ ) {
+		for (int i = 2; i <= n; i++) {
+			out.print("<td><h2>" + i + "단</h2>");
+			for (int j = 1; j <= 9; j++) {
+				out.print(i + "*" + j + "=" + (i * j) + "<br />");
+			}
+			out.print("</td>");
+		}
+		out.print("</tr></table>");		
+	}
+	%>
+</body>
+</html>

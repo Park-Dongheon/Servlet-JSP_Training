@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;MustHaveJSP/src/main/webapp/04Cookie/PopupMain.jsp&apos; to &apos;PopupMain_0.1.jsp&apos;" description="Rename resource &apos;PopupMain.jsp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/webapp/04Cookie/PopupMain.jsp" name="PopupMain_0.1.jsp" stamp="1718258619258" updateReferences="true"/>
+</session>

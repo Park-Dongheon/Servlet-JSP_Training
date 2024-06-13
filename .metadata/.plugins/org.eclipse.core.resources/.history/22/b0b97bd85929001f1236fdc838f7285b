@@ -1,0 +1,35 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>구구단 폼</title>
+</head>
+<body>
+<form action="Gugudan1.jsp" method="get">
+<ul>
+      <li>
+        <label for="Type1">
+          <input type="radio" id="Type1" name="gugudan_1" value="K" />
+          <input type="text" id="input1" name="input_dan" />
+          단
+        </label>
+      </li>
+      <li>
+        <label for="Type2">
+          <input type="radio" id="Type2" name="gugudan_2" value="Q" />
+          
+        </label>
+      </li>
+      <li>
+        <label for="Type3">
+          <input type="radio" id="Type3" name="gugudan_3" value="J" />
+          <input type="text" id="input2" name="input_col" />
+          열
+        </label>
+      </li>
+    </ul>
+</form>>
+</body>
+</html>
