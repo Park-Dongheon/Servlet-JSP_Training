@@ -1,0 +1,57 @@
+<%@ page import="java.sql.ResultSet" %>
+<%@ page import="java.sql.Statement" %>
+<%@ page import="java.sql.Connection" %>
+<%@ page import="common.JDBConnect" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%
+String id;
+%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h2>사용자 'musthave' 가 작성한 board 목록 출력2</h2>
+	<%
+	// 쿼리문
+	String sql = "SELECT * FROM board WHERE id = ?";
+	
+	// DB에 연결
+	try (JDBConnect jdbc = new JDBConnect();
+		PreparedStatement psmt = getPsmt().prepareStatement(sql);) {
+		jdbc.executeQuery(sql);
+		ResultSet rs = jdbc.getRs();
+		
+		out.println("<table border='1'>");
+		while (rs.next()) {
+			int num = rs.getInt(1);
+			String title = rs.getString("title");
+			String content = rs.getString("content");
+			String id = rs.getString(request.getParameter("id"));
+			java.sql.Date postdate = rs.getDate("postdate");
+			String visitcount = rs.getString("visitcount");
+			
+			
+			
+			out.println("<tr>");
+			out.println("<td>" + num + "</td>");
+			out.println("<td>" + title + "</td>");
+			out.println("<td>" + content + "</td>");
+			out.println("<td>" + id + "</td>");
+			out.println("<td>" + postdate + "</td>");
+			out.println("<td>" + visitcount + "</td>");
+			out.println("</tr>");
+			
+			
+		}
+		out.println("</table>");
+	} catch (Exception e) {
+		out.println(e.getMessage());
+	}
+	
+	%>
+</body>
+</html>

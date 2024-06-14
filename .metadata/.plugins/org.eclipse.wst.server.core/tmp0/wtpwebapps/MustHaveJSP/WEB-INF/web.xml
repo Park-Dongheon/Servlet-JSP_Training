@@ -15,6 +15,22 @@
   	<param-value>web.xml에 저장한 초기화 매개변수</param-value>
   </context-param>
   
+  <context-param>
+  	<param-name>MySQL Driver</param-name>
+  	<param-value>com.mysql.cj.jdbc.Driver</param-value>
+  </context-param>
+    <context-param>
+  	<param-name>MySQL URL</param-name>
+  	<param-value>jdbc:mysql://localhost:3306/musthave</param-value>
+  </context-param>
+    <context-param>
+  	<param-name>MySQL Id</param-name>
+  	<param-value>scott</param-value>
+  </context-param>
+    <context-param>
+  	<param-name>MySQL Pwd</param-name>
+  	<param-value>tiger</param-value>
+  </context-param>
 <!-- <error-page>
   	<error-code>404</error-code>  -->		<!-- 에러 코드 -->
 <!--   	<location>/02ImplicitObject/Exception.jsp</location> -->		<!-- 출력할 페이지 -->

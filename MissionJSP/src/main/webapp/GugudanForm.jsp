@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+ <!-- JSP 페이지의 언어를 Java로 설정하고, 컨텐츠 타입과 페이지 인코딩을 UTF-8로 설정 -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -42,7 +43,7 @@
 </script>
 </head>
 <body>
-	<!-- 폼 시작 -->
+	<!-- 폼 시작, 폼 데이터는 "GugudanProc.jsp"로 GET 방식으로 전송 -->
 	<form action="GugudanProc.jsp" method="get">
 		<div class="form-group">
 			<!-- 'Type1' 라디오 버튼과 함께 숫자 입력란 -->
