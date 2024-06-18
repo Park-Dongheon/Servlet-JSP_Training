@@ -51,6 +51,10 @@
   	<!-- MySQL 데이터베이스 사용자 비밀번호의 값 -->
   </context-param>
   
+  <session-config>
+  	<session-timeout>20</session-timeout>
+  </session-config>
+  
   <!-- 에러 코드, 특정 HTTP 에러 코드가 발생할 때 사용자 정의 에러 페이지를 지정하는 설정 -->
   <!-- error-page 요소는 특정 에러 코드에 대한 사용자 정의 에러 페이지를 정의 -->
 

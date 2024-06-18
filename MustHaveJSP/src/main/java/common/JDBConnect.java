@@ -79,6 +79,12 @@ public class JDBConnect implements AutoCloseable  {
 	public Statement getStmt() {
 		return stmt;
 	}
+	
+    // PreparedStatement 객체를 반환하는 메서드
+    protected PreparedStatement getPreparedStatement(String query) throws SQLException {
+        psmt = con.prepareStatement(query);
+        return psmt;
+    }
 
 	// ResultSet 객체를 반환하는 메서드
 	public ResultSet getRs() {
@@ -87,8 +93,8 @@ public class JDBConnect implements AutoCloseable  {
 
 	  // 쿼리 실행 메서드
     public void executeQuery(String sql) throws SQLException {
-        stmt = con.createStatement();
-        rs = stmt.executeQuery(sql);
+        setStmt(con.createStatement());
+        rs = getStmt().executeQuery(sql);
     }
 	
 	
@@ -96,7 +102,7 @@ public class JDBConnect implements AutoCloseable  {
 	public void close() {
 		try {
 			if (rs != null) rs.close();
-			if (stmt != null) stmt.close();
+			if (getStmt() != null) getStmt().close();
 			if (psmt != null) psmt.close();
 			if (con != null) con.close();
 			
@@ -104,6 +110,10 @@ public class JDBConnect implements AutoCloseable  {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+
+	public void setStmt(Statement stmt) {
+		this.stmt = stmt;
 	}
    
 }

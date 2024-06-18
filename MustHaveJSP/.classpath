@@ -13,5 +13,6 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="C:/WorkSpace_JSP/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/work/Catalina/localhost/MustHaveJSP/org/apache/jsp"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

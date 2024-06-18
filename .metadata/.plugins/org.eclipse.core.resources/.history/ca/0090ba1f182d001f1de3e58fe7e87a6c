@@ -1,0 +1,21 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%
+// 포함할 파일의 경로
+String outerPath1 = "./inc/OuterPage1.jsp";
+String outerPath2 = "./inc/OuterPage2.jsp";
+
+// page 영역과 request 영역에 속성 저장
+pageContext.setAttribute("pAttr", "동명왕");
+request.setAttribute("rAttr", "온조왕");
+%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+</html>
