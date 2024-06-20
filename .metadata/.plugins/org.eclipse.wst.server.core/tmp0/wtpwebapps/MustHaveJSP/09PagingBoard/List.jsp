@@ -3,6 +3,7 @@
 <%@ page import="java.util.Map"%>
 <%@ page import="model1.board.BoardDAO"%>
 <%@ page import="model1.board.BoardDTO"%>
+<%@ page import="utils.BoardPage"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
@@ -24,7 +25,7 @@ int totalCount = dao.selectCount(param);	// 게시물 수 확인
 /*** 페이지 처리 start ***/
 // 전체 페이지 수 계산
 int pageSize = Integer.parseInt(application.getInitParameter("POSTS_PER_PAGE"));
-int blockSize = Integer.parseInt(application.getInitParameter("PAGES_PER_BLOCK"));
+int blockPage = Integer.parseInt(application.getInitParameter("PAGES_PER_BLOCK"));
 int totalPage = (int)Math.ceil((double)totalCount / pageSize);
 
 // 현재 페이지 확인
@@ -53,7 +54,7 @@ dao.close();	// DB 연결 닫기
 <body>
 	<jsp:include page="../Common/Link.jsp" />	<!-- 공통 링크 -->
 	
-	<h2>목록 보기(list)</h2>
+	<h2>목록 보기(list) - 현재 페이지 : <%= pageNum %> (전체 : <%= totalPage %>)</h2>
 	<!-- 검색폼 -->
 	<form method="get">
 	<table border="1" width="90%">
@@ -69,7 +70,7 @@ dao.close();	// DB 연결 닫기
 	</tr>
 	</table>
 	</form>
-	<!-- 게시물 목록 테이블(표) -->
+	<!-- 게시물 목록 출력 테이블(표) -->
 	<table border="1" width="90%">
 		<!-- 각 컬럼의 이름 -->
 		<tr>
@@ -94,9 +95,11 @@ if (boardLists.isEmpty()) {
 else {
 	// 게시물이 있을 때
 	int virtualNum = 0;		// 화면상에서의 게시물 번호
+	int countNum = 0;
 	for (BoardDTO dto : boardLists)
 	{
-			virtualNum = totalCount--;		// 전체 게시물 수에서 시작해 1씩 감소
+ 		  //virtualNum = totalCount--;		// 전체 게시물 수에서 시작해 1씩 감소
+			virtualNum = totalCount - (((pageNum - 1) * pageSize) + countNum++);
 %>
 			<tr align="center">
 				<td><%= virtualNum %></td>	<!-- 게시물 번호 -->
@@ -106,7 +109,7 @@ else {
 				</td>
 				<td align="center"><%= dto.getId() %></td>	<!-- 작성자 아이디 -->
 				<td align="center"><%= dto.getVisitcount() %></td>	<!-- 조회수 -->
-				<td align="center"><%= dto.getId() %></td>	<!-- 작성일 -->
+				<td align="center"><%= dto.getPostdate() %></td>	<!-- 작성일 -->
 			</tr>
 <%
 	}
@@ -114,8 +117,13 @@ else {
 %>		
 	</table>
 	<!-- 목록 하단의 [글쓰기] 버튼 -->
-	<table board="1" width="90%">
-		<tr align="right">
+	<table border="1" width="90%">
+		<tr align="center">
+			<!-- 페이징 처리 -->
+			<td>
+				<%= BoardPage.pagingStr(totalCount, pageSize, blockPage, pageNum, request.getRequestURI()) %>
+			</td>
+			<!-- 글쓰기 버튼 -->
 			<td><button type="button" onclick="location.href='Write.jsp';">글쓰기</button></td>
 		</tr>
 	</table>

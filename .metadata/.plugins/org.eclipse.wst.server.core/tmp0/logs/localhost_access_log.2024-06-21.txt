@@ -1,0 +1,14 @@
+127.0.0.1 - - [21/Jun/2024:01:28:32 +0900] "GET / HTTP/1.1" 404 808
+0:0:0:0:0:0:0:1 - - [21/Jun/2024:01:28:34 +0900] "GET /MustHaveJSP/09PagingBoard/Write.jsp HTTP/1.1" 200 118
+0:0:0:0:0:0:0:1 - - [21/Jun/2024:01:28:36 +0900] "GET /MustHaveJSP/06Session/LoginForm.jsp HTTP/1.1" 200 1453
+0:0:0:0:0:0:0:1 - - [21/Jun/2024:01:28:36 +0900] "GET /favicon.ico HTTP/1.1" 404 819
+0:0:0:0:0:0:0:1 - - [21/Jun/2024:01:28:48 +0900] "POST /MustHaveJSP/06Session/LoginProcess.jsp HTTP/1.1" 200 1479
+0:0:0:0:0:0:0:1 - - [21/Jun/2024:01:52:45 +0900] "POST /MustHaveJSP/06Session/LoginProcess.jsp HTTP/1.1" 200 1479
+0:0:0:0:0:0:0:1 - - [21/Jun/2024:01:58:25 +0900] "POST /MustHaveJSP/06Session/LoginProcess.jsp HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [21/Jun/2024:01:58:25 +0900] "GET /MustHaveJSP/06Session/LoginForm.jsp HTTP/1.1" 200 1008
+0:0:0:0:0:0:0:1 - - [21/Jun/2024:01:58:28 +0900] "GET /MustHaveJSP/08Board/List.jsp HTTP/1.1" 200 2156
+0:0:0:0:0:0:0:1 - - [21/Jun/2024:01:58:32 +0900] "GET /MustHaveJSP/09PagingBoard/List.jsp HTTP/1.1" 500 2550
+0:0:0:0:0:0:0:1 - - [21/Jun/2024:02:04:48 +0900] "GET /MustHaveJSP/08Board/List.jsp HTTP/1.1" 200 2156
+0:0:0:0:0:0:0:1 - - [21/Jun/2024:02:04:51 +0900] "GET /MustHaveJSP/08Board/Write.jsp HTTP/1.1" 200 1990
+0:0:0:0:0:0:0:1 - - [21/Jun/2024:02:04:54 +0900] "GET /MustHaveJSP/08Board/List.jsp HTTP/1.1" 200 2156
+0:0:0:0:0:0:0:1 - - [21/Jun/2024:02:04:58 +0900] "GET /MustHaveJSP/09PagingBoard/List.jsp HTTP/1.1" 500 2550
