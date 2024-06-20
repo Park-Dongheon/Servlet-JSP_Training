@@ -6,7 +6,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-
 import jakarta.servlet.ServletContext;
 
 public class JDBConnect implements AutoCloseable  {
@@ -18,9 +17,9 @@ public class JDBConnect implements AutoCloseable  {
 		
 	 // 연결 자원
     private Connection con;
-    private Statement stmt;
-    private PreparedStatement psmt;
-    private ResultSet rs;
+    protected Statement stmt;
+    protected PreparedStatement psmt;
+    protected ResultSet rs;
 	
     // 기본 생성자
     public JDBConnect() {
