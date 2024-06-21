@@ -1,5 +1,9 @@
 package model1.board;
 
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.List;
 import java.util.Map;
 import java.util.Vector;
@@ -23,15 +27,25 @@ public class BoardDAO extends JDBConnect {
 			query += " WHERE " + map.get("searchField") + " "
 				   + " LIKE '%" + map.get("searchWord") + "%' ";
 		}
+		Statement st = null;
+		ResultSet rs = null;
 		
 		try {
-			stmt = getConnection().createStatement();		// 쿼리문 생성
-			rs = stmt.executeQuery(query);					// 쿼리 실행
+			st = getConnection().createStatement();		// 쿼리문 생성
+			rs = st.executeQuery(query);					// 쿼리 실행
 			rs.next();										// 커서를 첫 번째 행으로 이동
 			totalCount = rs.getInt(1);						// 첫 번째 컬럼 값을 가져옴
 		} catch (Exception e) {
 			System.out.println("게시물 수를 구하는 중 예외 발생");
 			e.printStackTrace();
+		} finally {
+			try {
+				rs.close();
+				st.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}		
 		}
 		
 		return totalCount;
@@ -50,9 +64,12 @@ public class BoardDAO extends JDBConnect {
 		
 		query += "ORDER BY num DESC ";
 		
+		Statement st = null;
+		ResultSet rs = null;
+		
 		try {
-			stmt = getConnection().createStatement();		// 쿼리문 생성
-			rs = stmt.executeQuery(query);					// 쿼리 실행
+			st = getConnection().createStatement();		// 쿼리문 생성
+			rs = st.executeQuery(query);					// 쿼리 실행
 			
 			while (rs.next()) {	// 결과를 순화하며...
 				// 한 행(게시물 하나)의 내용을 DTO에 저장
@@ -70,6 +87,14 @@ public class BoardDAO extends JDBConnect {
 		} catch (Exception e) {
 			System.out.println("게시물 조회 중 예외 발생");
 			e.printStackTrace();
+		} finally {
+			try {
+				rs.close();
+				st.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 		
 		return bbs;
@@ -77,7 +102,7 @@ public class BoardDAO extends JDBConnect {
 	
 	// 검색 조건에 맞는 게시물 목록을 반환합니다(페이징 기능 지원).
 	public List<BoardDTO> selectListPage(Map<String, Object> map) {
-		List<BoardDTO> bbs = new Vecotr<BoardDTO>();		// 결과(게시물 목록)를 담을 변수
+		List<BoardDTO> bbs = new Vector<BoardDTO>();		// 결과(게시물 목록)를 담을 변수
 		
 		// 쿼리문 템플릿
 		String query = " SELECT * FROM board ";
@@ -85,14 +110,17 @@ public class BoardDAO extends JDBConnect {
 		// 검색 조건 추가
 		if (map.get("searchWord") != null) {
 			query += " WHERE " + map.get("searchField")
-				   	 + " LIKE '%" + map.get("searchWord") + "%' ";
+				   + " LIKE '%" + map.get("searchWord") + "%' ";
 		}
 		
 		query += " ORDER BY num DESC LIMIT ?, ?";
 		
+		PreparedStatement psmt = null;
+		ResultSet rs = null;
+		
 		try {
 			// 쿼리문 완성
-			psmt.getConnection().prepareStatement(query);
+			psmt = getConnection().prepareStatement(query);
 			psmt.setInt(1, (int)map.get("start"));
 			psmt.setInt(2, (int)map.get("pageSize"));
 			
@@ -105,8 +133,8 @@ public class BoardDAO extends JDBConnect {
 				dto.setNum(rs.getString("num"));
 				dto.setTitle(rs.getString("title"));
 				dto.setContent(rs.getString("content"));
-				dto.setPostdate(rs.getDate("postdate"));
 				dto.setId(rs.getString("id"));
+				dto.setPostdate(rs.getDate("postdate"));
 				dto.setVisitcount(rs.getString("visitcount"));
 				
 				// 반환할 결과 목록에 게시물 추가
@@ -115,6 +143,14 @@ public class BoardDAO extends JDBConnect {
 		} catch (Exception e) {
 			System.out.println("게시물 조회 중 예외 발생");
 			e.printStackTrace();
+		} finally {
+			try {
+				rs.close();
+				psmt.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 		
 		// 목록 반환
@@ -124,6 +160,8 @@ public class BoardDAO extends JDBConnect {
 	// 게시글 데이터를 받아 DB에 추가합니다.
 	public int insertWrite(BoardDTO dto) {
 		int result = 0;
+		
+		PreparedStatement psmt = null;
 		
 		try {
 			// INSERT 쿼리문 작성
@@ -141,6 +179,13 @@ public class BoardDAO extends JDBConnect {
 		} catch (Exception e) {
 			System.out.println("게시물 입력 중 예외 발생");
 			e.printStackTrace();
+		} finally {
+			try {
+				psmt.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 		
 		return result;
@@ -152,8 +197,12 @@ public class BoardDAO extends JDBConnect {
 		
 		// 쿼리문 준비
 		String query = "SELECT B.*, M.name "
-					 + "FROM member M, board B "
-					 + "WHERE M.id = B.id AND num = ? ";
+					 + " FROM member M INNER JOIN board B "
+					 + " ON M.id = B.id "
+					 + " WHERE M.id = B.id AND num=?";
+		
+		PreparedStatement psmt = null;
+		ResultSet rs = null;
 		
 		try {
 			psmt = getConnection().prepareStatement(query);
@@ -173,6 +222,14 @@ public class BoardDAO extends JDBConnect {
 		} catch (Exception e) {
 			System.out.println("게시물 상세보기 중 예외 발생");
 			e.printStackTrace();
+		} finally {
+			try {
+				if(rs != null) rs.close();
+				if(psmt != null) psmt.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}	
 		}
 		
 		return dto;
@@ -185,13 +242,22 @@ public class BoardDAO extends JDBConnect {
 					 + " visitcount=visitcount + 1 "
 					 + " WHERE num = ?";
 		
+		PreparedStatement psmt = null;
+		
 		try {
 			psmt = getConnection().prepareStatement(query);
 			psmt.setString(1, num);		// 인파라미터를 일련번호로 설정
-			psmt.executeQuery();		// 쿼리 실행
+			psmt.executeUpdate();		// 쿼리 실행
 		} catch (Exception e) {
 			System.out.println("게시물 조회수 증가 중 예외 발생");
 			e.printStackTrace();
+		} finally {
+			try {
+				psmt.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 				
 	}
@@ -199,6 +265,8 @@ public class BoardDAO extends JDBConnect {
 	// 지정한 게시물을 수정합니다.
 	public int updateEdit(BoardDTO dto) {
 		int result = 0;
+		
+		PreparedStatement psmt = null;
 		
 		try {
 			// 쿼리문 템플릿
@@ -217,6 +285,13 @@ public class BoardDAO extends JDBConnect {
 		} catch (Exception e) {
 			System.out.println("게시물 수정 중 예외 발생");
 			e.printStackTrace();
+		} finally {
+			try {
+				psmt.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 		
 		return result;		// 결과 반환
@@ -225,6 +300,8 @@ public class BoardDAO extends JDBConnect {
 	// 지정한 게시물을 삭제합니다.
 	public int deletePost(BoardDTO dto) {
 		int result = 0;
+		
+		PreparedStatement psmt = null;
 		
 		try {
 			// 쿼리문 템플릿
@@ -239,6 +316,13 @@ public class BoardDAO extends JDBConnect {
 		} catch (Exception e) {
 			System.out.println("게시물 삭제 중 예외 발생");
 			e.printStackTrace();
+		} finally {
+			try {
+				psmt.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 		
 		return result;		// 결과 반환

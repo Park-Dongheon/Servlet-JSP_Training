@@ -31,13 +31,3 @@ if (iResult == 1) {
 	JSFunction.alertBack("글쓰기에 실패하였습니다.", out);
 }
 %>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
-
-</body>
-</html>

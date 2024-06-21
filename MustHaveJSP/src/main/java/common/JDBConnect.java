@@ -9,20 +9,21 @@ import java.sql.Statement;
 import jakarta.servlet.ServletContext;
 
 public class JDBConnect implements AutoCloseable  {
-	// DB에 연결
-	private String driver = "com.mysql.cj.jdbc.Driver";
-	private String url = "jdbc:mysql://localhost:3306/musthave";
-	private String id = "scott";
-	private String pwd = "tiger";
-		
+
 	 // 연결 자원
     private Connection con;
-    protected Statement stmt;
-    protected PreparedStatement psmt;
-    protected ResultSet rs;
+    private Statement stmt;
+    private PreparedStatement psmt;
+    private ResultSet rs;
 	
     // 기본 생성자
     public JDBConnect() {
+    	// DB에 연결
+    	String driver = "com.mysql.cj.jdbc.Driver";
+    	String url = "jdbc:mysql://localhost:3306/musthave";
+    	String id = "scott";
+    	String pwd = "tiger";
+    		
         try {
             // JDBC 드라이버 로드
             Class.forName(driver);

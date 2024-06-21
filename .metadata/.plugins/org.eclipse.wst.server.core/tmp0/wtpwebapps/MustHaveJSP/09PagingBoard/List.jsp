@@ -11,16 +11,16 @@
 BoardDAO dao = new BoardDAO(application);
 
 // 사용자가 입력한 검색 조건을 Map에 저장
-Map<String, Object> param = new HashMap<String, Object>();
+Map<String, Object> map = new HashMap<String, Object>();
 
 String searchField = request.getParameter("searchField");
 String searchWord = request.getParameter("searchWord");
 if (searchWord != null) {
-	param.put("searchField", searchField);
-	param.put("searchWord", searchWord);
+	map.put("searchField", searchField);
+	map.put("searchWord", searchWord);
 }
 
-int totalCount = dao.selectCount(param);	// 게시물 수 확인
+int totalCount = dao.selectCount(map);	// 게시물 수 확인
 
 /*** 페이지 처리 start ***/
 // 전체 페이지 수 계산
@@ -37,12 +37,11 @@ if (pageTemp != null && !pageTemp.equals(""))
 	
 // 목록에 출력할 게시물 범위 계산
 int start = (pageNum - 1) * pageSize;		// 첫 게시물 번호
-int end = pageNum * pageSize;				// 마지막 게시물 번호
-param.put("start", start);
-param.put("end", end);
+map.put("start", start);
+map.put("pageSize", pageSize);
 /*** 페이지 처리 end ***/
 
-List<BoardDTO> boardLists = dao.selectListPage(param);	// 게시물 목록 받기
+List<BoardDTO> boardLists = dao.selectListPage(map);	// 게시물 목록 받기
 dao.close();	// DB 연결 닫기
 %>
 <!DOCTYPE html>
@@ -61,10 +60,10 @@ dao.close();	// DB 연결 닫기
 	<tr>
 		<td align="center">
 			<select name="searchField">
-				<option value="title">제목</option>
-				<option value="content">내용</option>			
+ 				<option value="title" <%= "title".equals(searchField) ? "selected" : "" %>>제목</option>
+                <option value="content" <%= "content".equals(searchField) ? "selected" : "" %>>내용</option>		
 			</select>
-			<input type="text" name="searchWord" />
+			<input type="text" name="searchWord" value="<%= searchWord != "" ? searchWord : "" %>" />
 			<input type="submit" value="검색하기" />
 		</td>
 	</tr>
@@ -104,7 +103,7 @@ else {
 			<tr align="center">
 				<td><%= virtualNum %></td>	<!-- 게시물 번호 -->
 				<td align="left">	<!-- 제목(+ 하이퍼링크) -->
-					<a href="View.jsp?num=<%= dto.getNum() %>"><%= dto.getTitle() %>
+					<a href="View.jsp?num=<%= dto.getNum() %>&pageNum=<%= pageNum %>&searchField=<%= searchField %>&searchWord=<%= searchWord %>"><%= dto.getTitle() %>
 </a>
 				</td>
 				<td align="center"><%= dto.getId() %></td>	<!-- 작성자 아이디 -->
@@ -121,7 +120,7 @@ else {
 		<tr align="center">
 			<!-- 페이징 처리 -->
 			<td>
-				<%= BoardPage.pagingStr(totalCount, pageSize, blockPage, pageNum, request.getRequestURI()) %>
+				<%= BoardPage.pagingStr(totalCount, pageSize, blockPage, pageNum, request.getRequestURI(), searchField, searchWord) %>
 			</td>
 			<!-- 글쓰기 버튼 -->
 			<td><button type="button" onclick="location.href='Write.jsp';">글쓰기</button></td>

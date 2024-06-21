@@ -35,8 +35,7 @@ function validateForm(form) {	// 폼 내용 검증
 		<tr>
 			<td>내용</td>
 			<td>
-				<textarea name="content" style="width: 90%; height: 100px;" >
-				</textarea>
+				<textarea name="content" style="width: 90%; height: 100px;" ></textarea>
 			</td>
 		</tr>
 		<tr>

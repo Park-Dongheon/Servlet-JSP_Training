@@ -4,6 +4,10 @@
     pageEncoding="UTF-8"%>
 <%
 String num = request.getParameter("num");		// 일련번호 받기
+String pageNumParam = request.getParameter("pageNum");
+int pageNum = (pageNumParam != null && !pageNumParam.isEmpty()) ? Integer.parseInt(pageNumParam) : 1;
+String searchField = request.getParameter("searchField");
+String searchWord = request.getParameter("searchWord");
 
 BoardDAO dao = new BoardDAO(application);		// DAO 생성
 dao.updateVisitCount(num);						// 조회수 증가
@@ -70,7 +74,7 @@ function deletePost() {
 				}
 				%>
 				<button type="button"
-						onclick="location.href='List.jsp';">
+						onclick="location.href='List.jsp?pageNum=<%= pageNum %>&searchField=<%= searchField %>&searchWord=<%= searchWord %>';">
 					목록보기
 				</button>
 			</td>
