@@ -4,10 +4,12 @@
     pageEncoding="UTF-8"%>
 <%
 String num = request.getParameter("num");		// 일련번호 받기
-String pageNumParam = request.getParameter("pageNum");
-int pageNum = (pageNumParam != null && !pageNumParam.isEmpty()) ? Integer.parseInt(pageNumParam) : 1;
+String pageNum = request.getParameter("pageNum");
+if (pageNum == null) pageNum = "1";
 String searchField = request.getParameter("searchField");
+if (searchField == null) searchField = "";
 String searchWord = request.getParameter("searchWord");
+if (searchWord == null) searchWord = "";
 
 BoardDAO dao = new BoardDAO(application);		// DAO 생성
 dao.updateVisitCount(num);						// 조회수 증가
@@ -23,11 +25,50 @@ dao.close();									// DB 연결 해제
 function deletePost() {
 	var confirmed = confirm("정말로 삭제하겠습니까?");
 	if (confirmed) {
-		var form = document.writeFrm;			// 이름(name)이 "writeFrm"인 폼 선택
+		var form = document.forms['writeFrm'];	// 이름(name)이 "writeFrm"인 폼 선택
 		form.method = "post";					// 전송 방식
 		form.action = "DeleteProcess.jsp";		// 전송 경로
 		form.submit();							// 폼값 전송
 	}
+}
+
+function goToListPage() {
+    // 현재 페이지의 URI 정보 가져오기
+    var currentUrl = window.location.href;
+    
+    // List.jsp로 돌아가기 위해 pageNum 파라미터가 포함된 URI로 변경
+    var listUrl = 'List.jsp';
+    
+    // 현재 URI에서 pageNum 파라미터 가져오기
+    var pageNumParam = getParameterByName('pageNum', currentUrl);
+    
+    // 검색 조건 가져오기
+    var searchFieldParam = getParameterByName('searchField', currentUrl);
+    var searchWordParam = getParameterByName('searchWord', currentUrl);
+    
+    // pageNum 파라미터가 있는 경우에만 추가
+    if (pageNumParam) {
+        listUrl += '?pageNum=' + pageNumParam;
+        
+        // 검색 조건이 있으면 추가
+        if (searchFieldParam && searchWordParam) {
+            listUrl += '&searchField=' + searchFieldParam + '&searchWord=' + searchWordParam;
+        }
+    }
+    
+    // List.jsp로 이동
+    window.location.href = listUrl;
+}
+
+// URL에서 파라미터 이름에 해당하는 값을 가져오는 함수
+function getParameterByName(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, '\\$&');
+    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, ' '));
 }
 </script>
 </head>
@@ -74,7 +115,7 @@ function deletePost() {
 				}
 				%>
 				<button type="button"
-						onclick="location.href='List.jsp?pageNum=<%= pageNum %>&searchField=<%= searchField %>&searchWord=<%= searchWord %>';">
+						onclick="goToListPage()">
 					목록보기
 				</button>
 			</td>

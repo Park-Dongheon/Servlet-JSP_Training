@@ -15,12 +15,26 @@ Map<String, Object> map = new HashMap<String, Object>();
 
 String searchField = request.getParameter("searchField");
 String searchWord = request.getParameter("searchWord");
+
 if (searchWord != null) {
 	map.put("searchField", searchField);
 	map.put("searchWord", searchWord);
 }
 
 int totalCount = dao.selectCount(map);	// 게시물 수 확인
+
+//검색 필드와 검색어의 값이 null 또는 "null"일 때 공백 문자열로 초기화
+if (searchField == null || searchField.equals("null")) {
+ searchField = "";
+}
+if (searchWord == null || searchWord.equals("null")) {
+ searchWord = "";
+}
+
+//만약 searchWord가 공백 문자열이라면 searchField도 초기화
+if (searchWord.equals("")) {
+ searchField = "";
+}
 
 /*** 페이지 처리 start ***/
 // 전체 페이지 수 계산
@@ -63,7 +77,7 @@ dao.close();	// DB 연결 닫기
  				<option value="title" <%= "title".equals(searchField) ? "selected" : "" %>>제목</option>
                 <option value="content" <%= "content".equals(searchField) ? "selected" : "" %>>내용</option>		
 			</select>
-			<input type="text" name="searchWord" value="<%= searchWord != "" ? searchWord : "" %>" />
+			<input type="text" name="searchWord" value="<%= searchWord %>" />
 			<input type="submit" value="검색하기" />
 		</td>
 	</tr>
@@ -103,8 +117,7 @@ else {
 			<tr align="center">
 				<td><%= virtualNum %></td>	<!-- 게시물 번호 -->
 				<td align="left">	<!-- 제목(+ 하이퍼링크) -->
-					<a href="View.jsp?num=<%= dto.getNum() %>&pageNum=<%= pageNum %>&searchField=<%= searchField %>&searchWord=<%= searchWord %>"><%= dto.getTitle() %>
-</a>
+					<a href="View.jsp?num=<%= dto.getNum() %>&pageNum=<%= pageNum %><%= (searchField != null && !searchField.equals("")) ? "&searchField=" + searchField : "" %><%= (searchWord != null && !searchWord.equals("")) ? "&searchWord=" + searchWord : "" %>"><%= dto.getTitle() %></a>
 				</td>
 				<td align="center"><%= dto.getId() %></td>	<!-- 작성자 아이디 -->
 				<td align="center"><%= dto.getVisitcount() %></td>	<!-- 조회수 -->
@@ -120,7 +133,7 @@ else {
 		<tr align="center">
 			<!-- 페이징 처리 -->
 			<td>
-				<%= BoardPage.pagingStr(totalCount, pageSize, blockPage, pageNum, request.getRequestURI(), searchField, searchWord) %>
+				<%= BoardPage.pagingStr(totalCount, pageSize, blockPage, pageNum, request.getRequestURI(), searchField.equals("") ? null : searchField, searchWord.equals("") ? null : searchWord) %>
 			</td>
 			<!-- 글쓰기 버튼 -->
 			<td><button type="button" onclick="location.href='Write.jsp';">글쓰기</button></td>

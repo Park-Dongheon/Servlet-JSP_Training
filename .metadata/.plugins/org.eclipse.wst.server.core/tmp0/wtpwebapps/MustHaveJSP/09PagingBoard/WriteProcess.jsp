@@ -18,7 +18,7 @@ dto.setId(session.getAttribute("UserId").toString());
 BoardDAO dao = new BoardDAO(application);
 int iResult = dao.insertWrite(dto);		// 원래 코드
 // int iResult = 0;
-// for (int i = 1; i <= 100; i++) {
+// for (int i = 1; i <= 200; i++) {
 // 	dto.setTitle(title + "-" + i);
 // 	iResult = dao.insertWrite(dto);
 // }
