@@ -57,7 +57,7 @@ public class BoardDAO extends JDBConnect {
 		List<BoardDTO> bbs = new Vector<BoardDTO>();		// 결과(게시물 목록)를 담을 변수
 		
 		String query = "SELECT * FROM board ";
-		if (map.get("searchWord") != null) {
+		if (map != null && map.get("searchWord") != null) {
 			query += "WHERE " + map.get("searchField") + " "
 				   + " LIKE '%" + map.get("searchWord") + "%' ";
 		}
