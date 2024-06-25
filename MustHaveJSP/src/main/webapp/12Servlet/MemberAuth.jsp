@@ -18,9 +18,9 @@
 		<a href="./MemberAuth.mvc?id=stranger&pass=1234">회원인증(비회원)</a>
 	</p>
 	
-	<form method="post" action="../12Servlet/MemberAuth.mvc?id=${member_id}&pass=${member_pw}">
-		id : <input type="text" value="${member_id}" /> <br />
-		pw : <input type="text" value="${member_pw}" /> <br />
+	<form method="post" action="../12Servlet/MemberAuth.mvc">
+		id : <input type="text" name="id" /> <br />
+		pw : <input type="text" name="pass" /> <br />
 		<input type="submit" value="제출" />
 	</form>
 </body>
