@@ -1,0 +1,35 @@
+<%@page import="java.util.List"%>
+<%@page import="java.util.HashMap"%>
+<%@page import="java.util.Map"%>
+<%@ page import="model1.board.BoardDAO"%>
+<%@ page import="model1.board.BoardDTO"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+<%
+BoardDAO dao = new BoardDAO(application);
+List<BoardDTO> list = dao.selectList(null);
+dao.close();	// DB 연결 닫기
+pageContext.setAttribute("list", list);
+%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h4>table</h4>
+	<table border="1">
+	<c:forEach var="board" items="${ list }">
+		<tr>
+			<td>${ board.num }</td>
+			<td>${ board.title }</td>
+			<td>${ board.id }</td>
+			<td>${ board.postdate }</td>
+			<td>${ board.visitcount }</td>
+		</tr>
+	</c:forEach>
+	</table>	
+</body>
+</html>

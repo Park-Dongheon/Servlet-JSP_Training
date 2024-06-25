@@ -1,0 +1,10 @@
+package model;
+
+import common.JDBConnect;
+import jakarta.servlet.ServletContext;
+
+public class DAO extends JDBConnect {
+	public DAO(ServletContext application) {
+		
+	}
+}

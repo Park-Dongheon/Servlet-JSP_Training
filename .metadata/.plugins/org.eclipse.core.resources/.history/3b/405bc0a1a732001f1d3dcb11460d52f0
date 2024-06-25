@@ -1,0 +1,7 @@
+package model;
+
+import common.JDBConnect;
+
+public class DAO extends JDBConnect {
+
+}

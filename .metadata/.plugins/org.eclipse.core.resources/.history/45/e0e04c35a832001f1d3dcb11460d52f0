@@ -1,0 +1,13 @@
+package model;
+
+import common.JDBConnect;
+import jakarta.servlet.ServletContext;
+
+public class DAO extends JDBConnect {
+	public DAO(ServletContext application) {
+		super(application);
+	}
+	
+	// 테이블 내용 반환
+	public DTO tableView(String num)
+}
