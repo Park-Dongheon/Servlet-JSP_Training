@@ -29,12 +29,12 @@ public class MultipleProcess extends HttpServlet{
 			for(String originalFileName : listFileName) {
 				String savedFileName = FileUtil.renameFile(saveDirectory, originalFileName);
 				insertMyFile(req, originalFileName, savedFileName);
+				}
 				resp.sendRedirect("FileList.jsp");
-			}
 		} catch (Exception e) {
 			e.printStackTrace();
 			req.setAttribute("errorMessage", "파일 업로드 오류");
-			req.getRequestDispatcher("MultiUploadMain.jsp").forward(req, resp);
+			req.getRequestDispatcher("MultiFileUploadMain.jsp").forward(req, resp);
 			
 		}
 	}

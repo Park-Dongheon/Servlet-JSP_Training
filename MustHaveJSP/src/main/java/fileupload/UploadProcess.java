@@ -11,7 +11,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 @WebServlet("/13FileUpload/UploadProcess.do")
 @MultipartConfig(
-		maxFileSize = 1024 * 1024 * 1,
+		maxFileSize = 1024 * 1024 * 5,
 		maxRequestSize = 1024 * 1024 * 10
 )
 
