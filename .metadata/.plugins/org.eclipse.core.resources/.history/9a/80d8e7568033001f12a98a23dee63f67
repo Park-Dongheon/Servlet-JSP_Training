@@ -1,0 +1,27 @@
+package fileupload;
+
+import java.sql.PreparedStatement;
+
+import common.JDBConnect;
+
+public class MyFileDAO extends JDBConnect {
+	// 새로운 게시물을 입력합니다.
+	
+	
+	public int insertFile(MyFileDTO dto) {
+		int applyResult = 0;
+		try {
+			String query = "INSERT INTO myfile (title, cate, ofile, sfile) "
+						 + " VALUES (?, ?, ?, ?)";
+			
+			PreparedStatement psmt = null;
+			psmt = getConnection().prepareStatement(query);
+			psmt.setString(1, dto.getTitle());
+			psmt.setString(2, dto.getCate());
+			psmt.setString(3, dto.getOfile());
+			psmt.setString(4, dto.getSfile());
+			
+			applyResult = psmt.executeUpdate();
+		}
+	}
+}

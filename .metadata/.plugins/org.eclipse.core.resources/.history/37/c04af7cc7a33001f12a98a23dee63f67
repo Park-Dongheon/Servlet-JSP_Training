@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd" id="WebApp_ID" version="5.0">
+  <display-name>MissionJSP</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+  </welcome-file-list>
+  
+  <context-param>
+  	<param-name>MySQL Driver</param-name>
+	<!-- MySQL 드라이버 클래스 이름을 정의하는 초기화 매개변수 -->
+  	<param-value>com.mysql.cj.jdbc.Driver</param-value>
+  	<!-- MySQL 드라이버 클래스의 값 -->
+  </context-param>
+  
+  <context-param>
+  	<param-name>MySQL URL</param-name>
+  	<!-- MySQL 데이터베이스 URL을 정의하는 초기화 매개변수 -->
+  	<param-value>jdbc:mysql://localhost:3306/musthave</param-value>
+  	<!-- MySQL 데이터베이스 연결 URL -->
+  </context-param>
+  
+  <context-param>
+  	<param-name>MySQL Id</param-name>
+  	<!-- MySQL 데이터베이스 사용자 ID를 정의하는 초기화 매개변수 -->
+  	<param-value>scott</param-value>
+  	<!-- MySQL 데이터베이스 사용자 ID의 값 -->
+  </context-param>
+  
+  <context-param>
+  	<param-name>MySQL Pwd</param-name>
+  	<!-- MySQL 데이터베이스 사용자 비밀번호를 정의하는 초기화 매개변수 -->
+  	<param-value>tiger</param-value>
+  	<!-- MySQL 데이터베이스 사용자 비밀번호의 값 -->
+  </context-param>
+  
+  <servlet>
+  	<servlet-name>member</servlet-name>
+  	<servlet-class>servlet.member</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>member</servlet-name>
+  	<url-pattern>/ServletStudy/member</url-pattern>
+  </servlet-mapping>
+  
+</web-app>

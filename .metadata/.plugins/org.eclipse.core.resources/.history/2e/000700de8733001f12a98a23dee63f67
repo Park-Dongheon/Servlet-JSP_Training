@@ -1,0 +1,35 @@
+package fileupload;
+
+import java.io.IOException;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+public class UploadProcess extends HttpServlet{
+	private static final long serialVersionUID = 1L;
+
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		try {
+			String saveDirectory = getServletContext().getRealPath("/Uploads");
+			String originalFileName = FIleUtil.uploadFile(req, saveDirectory);
+			String savedFileName = FIleUtil.renameFile(saveDirectory, originalFileName);
+			insertMyFile(req, originalFileName, savedFileName);
+			resp.sendRedirect("FileList.jsp")
+		} catch (Exception e) {
+			e.printStackTrace();
+			
+		}
+		
+		super.doPost(req, resp);
+	}
+
+	private void insertMyFile(HttpServletRequest req, String originalFileName, String savedFileName) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
+}

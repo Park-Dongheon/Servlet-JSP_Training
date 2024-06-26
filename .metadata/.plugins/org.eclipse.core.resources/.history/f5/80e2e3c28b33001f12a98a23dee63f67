@@ -1,0 +1,55 @@
+package fileupload;
+
+import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.Part;
+
+public class FIleUtil {
+	// 파일 업로드
+	// 요청 객체 내에 전송되어온 파일을 디스크에 저장하고 파일명을 리턴
+	public static String uploadFile(HttpServletRequest req, String sDirectory) throws ServletException, IOException {
+		// getPart() 와 write() 메서드는 각각 ServletException, IOException 에 대한 예외 처리를 해야함, 해당 메서드에서는 예외를 무시하고 호출된 지점으로 던짐
+		
+		// MultiPart에서 name이 "ofile"인 Part를 가져와서 part 변수에 할당
+		Part part = req.getPart("ofile");										// ofile 로 된 part 를 가져옴
+		// request 내장 객체의 getPart() 메서드로 file 타입으로 전송된 폼값을 받아 Part 객체에 저장
+		
+		// part 객체의 헤더값 중 content-disposition 읽어오기
+		String partHeader = part.getHeader("content-disposition");
+		// Part 객체에서 "content-disposition"라는 헤더값을 읽어옴, 내용은 <input> 태그의 name 속성과 파일명이 포함되어 있슴
+		// partHeader=form-data;	 name="ofile"; -- <input>의 name 속성값, 	filename="성유겸-요리사.jpeg" -- 원본파일명
+		
+		// partHeader=form-data;
+		System.out.println("partHeader" + partHeader);
+		String[] phArr = partHeader.split("filename=");
+		// 헤더의 내용에서 파일명을 추출하기 위해 split() 메서드로 분리한 후 더블쿼테이션을 제거
+		
+		String originalFileName = phArr[1].trim().replace("\"", "");
+		// 전송된 파일을 저장
+		if (!originalFileName.isEmpty()) {										// 파일명이 빈 값이 아니라면 디렉터리에 파일을 저장
+			part.write(sDirectory+ File.separator +originalFileName);
+		}
+		
+		return originalFileName;												// 저장된 원본파일명은 반환
+	}
+	
+	// 파일명 변경
+	public static String renameFile(String sDirectory, String fileName) {
+		String ext = fileName.substring(fileName.lastIndexOf("."));				// 저장된 파일명을 변경하기 위해 원본파일명에서 확장자를 잘라냄
+		String now = new SimpleDateFormat("yyyyMMdd_HmsS").format(new Date());	// "현재날짜_시간" 형식의 문자열을 생성
+		String newFileName = now + ext;											// 확장자와 파일명은 연결하여 새로운 파일명은 생성
+		
+		File oldFile = new File(sDirectory + File.separator + fileName);
+		File newFile = new File(sDirectory + File.separator + newFileName);
+		oldFile.renameTo(newFile);												// 원본파일과 새로운파일에 대한 File 객체를 생성한 후 파일명을 변경
+		
+		return newFileName;														// 변경된 파일명을 반환
+	}
+	
+
+}
