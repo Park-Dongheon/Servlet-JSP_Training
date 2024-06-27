@@ -23,6 +23,7 @@ public class BoardDAO extends JDBConnect {
 		
 		// 게시물 수를 얻어오는 쿼리문 작성
 		String query = " SELECT COUNT(*) FROM board ";
+		
 		if (map.get("searchWord") != null) {
 			query += " WHERE " + map.get("searchField") + " "
 				   + " LIKE '%" + map.get("searchWord") + "%' ";
@@ -35,6 +36,7 @@ public class BoardDAO extends JDBConnect {
 			rs = st.executeQuery(query);					// 쿼리 실행
 			rs.next();										// 커서를 첫 번째 행으로 이동
 			totalCount = rs.getInt(1);						// 첫 번째 컬럼 값을 가져옴
+			
 		} catch (Exception e) {
 			System.out.println("게시물 수를 구하는 중 예외 발생");
 			e.printStackTrace();

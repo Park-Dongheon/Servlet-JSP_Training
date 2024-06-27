@@ -133,7 +133,7 @@ else {
 		<tr align="center">
 			<!-- 페이징 처리 -->
 			<td>
-				<%= BoardPage.pagingStr(totalCount, pageSize, blockPage, pageNum, request.getRequestURI(), searchField.equals("") ? null : searchField, searchWord.equals("") ? null : searchWord) %>
+				<%= BoardPage.pagingStr(totalCount, pageSize, blockPage, pageNum, request.getRequestURI())%>
 			</td>
 			<!-- 글쓰기 버튼 -->
 			<td><button type="button" onclick="location.href='Write.jsp';">글쓰기</button></td>

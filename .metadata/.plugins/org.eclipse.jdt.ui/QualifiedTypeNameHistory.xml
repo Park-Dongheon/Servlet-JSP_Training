@@ -9,4 +9,9 @@
     <fullyQualifiedTypeName name="fileupload.FIleUtil"/>
     <fullyQualifiedTypeName name="java.sql.Statement"/>
     <fullyQualifiedTypeName name="java.util.Collection"/>
+    <fullyQualifiedTypeName name="java.util.Map"/>
+    <fullyQualifiedTypeName name="java.util.HashMap"/>
+    <fullyQualifiedTypeName name="utils.BoardPage"/>
+    <fullyQualifiedTypeName name="utils.JSFunction"/>
+    <fullyQualifiedTypeName name="java.util.Arrays"/>
 </qualifiedTypeNameHistroy>
