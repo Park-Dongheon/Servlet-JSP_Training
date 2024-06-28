@@ -1,4 +1,4 @@
-!SESSION 2024-06-28 16:12:53.663 -----------------------------------------------
+!SESSION 2024-06-28 17:23:58.698 -----------------------------------------------
 eclipse.buildId=4.32.0.20240606-1231
 java.version=21.0.3
 java.vendor=Eclipse Adoptium
@@ -6,186 +6,13 @@ BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
 Framework arguments:  -product org.eclipse.epp.package.jee.product
 Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
 
-This is a continuation of log file C:\WorkSpace_JSP\.metadata\.bak_2.log
-Created Time: 2024-06-28 17:20:06.375
+This is a continuation of log file C:\WorkSpace_JSP\.metadata\.bak_1.log
+Created Time: 2024-06-28 17:47:24.255
 
-!ENTRY org.eclipse.jst.jee.ui 4 0 2024-06-28 17:20:06.375
-!MESSAGE Invalid path: '/MustHaveJSP/src/main/webapp/14MVCBoard/View.jsp'
+!ENTRY org.eclipse.jst.jee.ui 4 0 2024-06-28 17:47:24.256
+!MESSAGE Invalid path: '/MustHaveJSP/src/main/webapp/14MVCBoard/Default.jsp'
 !STACK 1
-Java Model Exception: Error in Java Model (code 979): Invalid path: '/MustHaveJSP/src/main/webapp/14MVCBoard/View.jsp'
-	at org.eclipse.jdt.internal.core.JavaProject.findElement(JavaProject.java:1452)
-	at org.eclipse.jdt.internal.core.JavaProject.findElement(JavaProject.java:1442)
-	at org.eclipse.jst.jee.ui.internal.deployables.WebDeployableArtifactUtil.getClassNameForType(WebDeployableArtifactUtil.java:319)
-	at org.eclipse.jst.jee.ui.internal.deployables.WebDeployableArtifactUtil.getServletClassName(WebDeployableArtifactUtil.java:280)
-	at org.eclipse.jst.jee.ui.internal.deployables.WebDeployableArtifactUtil.getModuleObject(WebDeployableArtifactUtil.java:175)
-	at org.eclipse.jst.jee.ui.internal.deployables.WebDeployableArtifactAdapterFactory.getModuleArtifact(WebDeployableArtifactAdapterFactory.java:33)
-	at org.eclipse.wst.server.core.model.ModuleArtifactAdapterDelegate.getModuleArtifacts(ModuleArtifactAdapterDelegate.java:48)
-	at org.eclipse.wst.server.core.internal.ModuleArtifactAdapter.getModuleArtifacts(ModuleArtifactAdapter.java:185)
-	at org.eclipse.wst.server.core.internal.ServerPlugin.hasModuleArtifact(ServerPlugin.java:1298)
-	at org.eclipse.wst.server.ui.internal.ServerLaunchShortcut.getLaunchableResource(ServerLaunchShortcut.java:126)
-	at org.eclipse.debug.internal.ui.launchConfigurations.LaunchShortcutExtension.getLaunchableResource(LaunchShortcutExtension.java:507)
-	at org.eclipse.debug.internal.ui.contextlaunching.LaunchingResourceManager.getLaunchableResource(LaunchingResourceManager.java:428)
-	at org.eclipse.debug.internal.ui.contextlaunching.ContextRunner.selectAndLaunch(ContextRunner.java:168)
-	at org.eclipse.debug.internal.ui.contextlaunching.ContextRunner.launch(ContextRunner.java:100)
-	at org.eclipse.debug.ui.actions.AbstractLaunchToolbarAction.runInternal(AbstractLaunchToolbarAction.java:90)
-	at org.eclipse.debug.ui.actions.AbstractLaunchHistoryAction.runWithEvent(AbstractLaunchHistoryAction.java:420)
-	at org.eclipse.ui.internal.PluginAction.runWithEvent(PluginAction.java:229)
-	at org.eclipse.ui.internal.WWinPluginAction.runWithEvent(WWinPluginAction.java:218)
-	at org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection(ActionContributionItem.java:581)
-	at org.eclipse.jface.action.ActionContributionItem.lambda$5(ActionContributionItem.java:454)
-	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:91)
-	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4285)
-	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1160)
-	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4083)
-	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3673)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1151)
-	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1042)
-	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:152)
-	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:639)
-	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
-	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:546)
-	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:173)
-	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
-	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:208)
-	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:143)
-	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:109)
-	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:439)
-	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:271)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:668)
-	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:605)
-	at org.eclipse.equinox.launcher.Main.run(Main.java:1481)
-!SUBENTRY 1 org.eclipse.jdt.core 4 979 2024-06-28 17:20:06.375
-!MESSAGE Invalid path: '/MustHaveJSP/src/main/webapp/14MVCBoard/View.jsp'
-
-!ENTRY org.eclipse.jst.jee.ui 4 0 2024-06-28 17:20:06.376
-!MESSAGE Invalid path: '/MustHaveJSP/src/main/webapp/14MVCBoard/View.jsp'
-!STACK 1
-Java Model Exception: Error in Java Model (code 979): Invalid path: '/MustHaveJSP/src/main/webapp/14MVCBoard/View.jsp'
-	at org.eclipse.jdt.internal.core.JavaProject.findElement(JavaProject.java:1452)
-	at org.eclipse.jdt.internal.core.JavaProject.findElement(JavaProject.java:1442)
-	at org.eclipse.jst.jee.ui.internal.deployables.WebDeployableArtifactUtil.getClassNameForType(WebDeployableArtifactUtil.java:319)
-	at org.eclipse.jst.jee.ui.internal.deployables.WebDeployableArtifactUtil.isCactusJunitTest(WebDeployableArtifactUtil.java:259)
-	at org.eclipse.jst.jee.ui.internal.deployables.WebDeployableArtifactUtil.getModuleObject(WebDeployableArtifactUtil.java:166)
-	at org.eclipse.jst.jee.ui.internal.deployables.WebDeployableArtifactAdapterFactory.getModuleArtifact(WebDeployableArtifactAdapterFactory.java:33)
-	at org.eclipse.wst.server.core.model.ModuleArtifactAdapterDelegate.getModuleArtifacts(ModuleArtifactAdapterDelegate.java:48)
-	at org.eclipse.wst.server.core.internal.ModuleArtifactAdapter.getModuleArtifacts(ModuleArtifactAdapter.java:185)
-	at org.eclipse.wst.server.core.internal.ServerPlugin.hasModuleArtifact(ServerPlugin.java:1298)
-	at org.eclipse.wst.server.ui.internal.ServerPropertyTester.checkProperty(ServerPropertyTester.java:50)
-	at org.eclipse.wst.server.ui.internal.ServerPropertyTester.test(ServerPropertyTester.java:35)
-	at org.eclipse.core.internal.expressions.Property.test(Property.java:65)
-	at org.eclipse.core.expressions.TestExpression.evaluate(TestExpression.java:107)
-	at org.eclipse.core.expressions.CompositeExpression.evaluateAnd(CompositeExpression.java:54)
-	at org.eclipse.core.internal.expressions.IterateExpression.evaluate(IterateExpression.java:163)
-	at org.eclipse.core.expressions.CompositeExpression.evaluateAnd(CompositeExpression.java:54)
-	at org.eclipse.core.expressions.WithExpression.evaluate(WithExpression.java:84)
-	at org.eclipse.core.expressions.CompositeExpression.evaluateAnd(CompositeExpression.java:54)
-	at org.eclipse.core.internal.expressions.EnablementExpression.evaluate(EnablementExpression.java:59)
-	at org.eclipse.debug.internal.ui.launchConfigurations.LaunchShortcutExtension.evalEnablementExpression(LaunchShortcutExtension.java:273)
-	at org.eclipse.debug.internal.ui.contextlaunching.LaunchingResourceManager.getShortcutsForSelection(LaunchingResourceManager.java:468)
-	at org.eclipse.debug.internal.ui.contextlaunching.LaunchingResourceManager.pruneShortcuts(LaunchingResourceManager.java:407)
-	at org.eclipse.debug.internal.ui.contextlaunching.ContextRunner.selectAndLaunch(ContextRunner.java:172)
-	at org.eclipse.debug.internal.ui.contextlaunching.ContextRunner.launch(ContextRunner.java:100)
-	at org.eclipse.debug.ui.actions.AbstractLaunchToolbarAction.runInternal(AbstractLaunchToolbarAction.java:90)
-	at org.eclipse.debug.ui.actions.AbstractLaunchHistoryAction.runWithEvent(AbstractLaunchHistoryAction.java:420)
-	at org.eclipse.ui.internal.PluginAction.runWithEvent(PluginAction.java:229)
-	at org.eclipse.ui.internal.WWinPluginAction.runWithEvent(WWinPluginAction.java:218)
-	at org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection(ActionContributionItem.java:581)
-	at org.eclipse.jface.action.ActionContributionItem.lambda$5(ActionContributionItem.java:454)
-	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:91)
-	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4285)
-	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1160)
-	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4083)
-	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3673)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1151)
-	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1042)
-	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:152)
-	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:639)
-	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
-	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:546)
-	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:173)
-	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
-	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:208)
-	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:143)
-	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:109)
-	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:439)
-	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:271)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:668)
-	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:605)
-	at org.eclipse.equinox.launcher.Main.run(Main.java:1481)
-!SUBENTRY 1 org.eclipse.jdt.core 4 979 2024-06-28 17:20:06.376
-!MESSAGE Invalid path: '/MustHaveJSP/src/main/webapp/14MVCBoard/View.jsp'
-
-!ENTRY org.eclipse.jst.jee.ui 4 0 2024-06-28 17:20:06.377
-!MESSAGE Invalid path: '/MustHaveJSP/src/main/webapp/14MVCBoard/View.jsp'
-!STACK 1
-Java Model Exception: Error in Java Model (code 979): Invalid path: '/MustHaveJSP/src/main/webapp/14MVCBoard/View.jsp'
-	at org.eclipse.jdt.internal.core.JavaProject.findElement(JavaProject.java:1452)
-	at org.eclipse.jdt.internal.core.JavaProject.findElement(JavaProject.java:1442)
-	at org.eclipse.jst.jee.ui.internal.deployables.WebDeployableArtifactUtil.getClassNameForType(WebDeployableArtifactUtil.java:319)
-	at org.eclipse.jst.jee.ui.internal.deployables.WebDeployableArtifactUtil.getServletClassName(WebDeployableArtifactUtil.java:276)
-	at org.eclipse.jst.jee.ui.internal.deployables.WebDeployableArtifactUtil.getModuleObject(WebDeployableArtifactUtil.java:175)
-	at org.eclipse.jst.jee.ui.internal.deployables.WebDeployableArtifactAdapterFactory.getModuleArtifact(WebDeployableArtifactAdapterFactory.java:33)
-	at org.eclipse.wst.server.core.model.ModuleArtifactAdapterDelegate.getModuleArtifacts(ModuleArtifactAdapterDelegate.java:48)
-	at org.eclipse.wst.server.core.internal.ModuleArtifactAdapter.getModuleArtifacts(ModuleArtifactAdapter.java:185)
-	at org.eclipse.wst.server.core.internal.ServerPlugin.hasModuleArtifact(ServerPlugin.java:1298)
-	at org.eclipse.wst.server.ui.internal.ServerPropertyTester.checkProperty(ServerPropertyTester.java:50)
-	at org.eclipse.wst.server.ui.internal.ServerPropertyTester.test(ServerPropertyTester.java:35)
-	at org.eclipse.core.internal.expressions.Property.test(Property.java:65)
-	at org.eclipse.core.expressions.TestExpression.evaluate(TestExpression.java:107)
-	at org.eclipse.core.expressions.CompositeExpression.evaluateAnd(CompositeExpression.java:54)
-	at org.eclipse.core.internal.expressions.IterateExpression.evaluate(IterateExpression.java:163)
-	at org.eclipse.core.expressions.CompositeExpression.evaluateAnd(CompositeExpression.java:54)
-	at org.eclipse.core.expressions.WithExpression.evaluate(WithExpression.java:84)
-	at org.eclipse.core.expressions.CompositeExpression.evaluateAnd(CompositeExpression.java:54)
-	at org.eclipse.core.internal.expressions.EnablementExpression.evaluate(EnablementExpression.java:59)
-	at org.eclipse.debug.internal.ui.launchConfigurations.LaunchShortcutExtension.evalEnablementExpression(LaunchShortcutExtension.java:273)
-	at org.eclipse.debug.internal.ui.contextlaunching.LaunchingResourceManager.getShortcutsForSelection(LaunchingResourceManager.java:468)
-	at org.eclipse.debug.internal.ui.contextlaunching.LaunchingResourceManager.pruneShortcuts(LaunchingResourceManager.java:407)
-	at org.eclipse.debug.internal.ui.contextlaunching.ContextRunner.selectAndLaunch(ContextRunner.java:172)
-	at org.eclipse.debug.internal.ui.contextlaunching.ContextRunner.launch(ContextRunner.java:100)
-	at org.eclipse.debug.ui.actions.AbstractLaunchToolbarAction.runInternal(AbstractLaunchToolbarAction.java:90)
-	at org.eclipse.debug.ui.actions.AbstractLaunchHistoryAction.runWithEvent(AbstractLaunchHistoryAction.java:420)
-	at org.eclipse.ui.internal.PluginAction.runWithEvent(PluginAction.java:229)
-	at org.eclipse.ui.internal.WWinPluginAction.runWithEvent(WWinPluginAction.java:218)
-	at org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection(ActionContributionItem.java:581)
-	at org.eclipse.jface.action.ActionContributionItem.lambda$5(ActionContributionItem.java:454)
-	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:91)
-	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4285)
-	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1160)
-	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4083)
-	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3673)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1151)
-	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1042)
-	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:152)
-	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:639)
-	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
-	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:546)
-	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:173)
-	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
-	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:208)
-	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:143)
-	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:109)
-	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:439)
-	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:271)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:668)
-	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:605)
-	at org.eclipse.equinox.launcher.Main.run(Main.java:1481)
-!SUBENTRY 1 org.eclipse.jdt.core 4 979 2024-06-28 17:20:06.377
-!MESSAGE Invalid path: '/MustHaveJSP/src/main/webapp/14MVCBoard/View.jsp'
-
-!ENTRY org.eclipse.jst.jee.ui 4 0 2024-06-28 17:20:06.377
-!MESSAGE Invalid path: '/MustHaveJSP/src/main/webapp/14MVCBoard/View.jsp'
-!STACK 1
-Java Model Exception: Error in Java Model (code 979): Invalid path: '/MustHaveJSP/src/main/webapp/14MVCBoard/View.jsp'
+Java Model Exception: Error in Java Model (code 979): Invalid path: '/MustHaveJSP/src/main/webapp/14MVCBoard/Default.jsp'
 	at org.eclipse.jdt.internal.core.JavaProject.findElement(JavaProject.java:1452)
 	at org.eclipse.jdt.internal.core.JavaProject.findElement(JavaProject.java:1442)
 	at org.eclipse.jst.jee.ui.internal.deployables.WebDeployableArtifactUtil.getClassNameForType(WebDeployableArtifactUtil.java:319)
@@ -240,13 +67,13 @@ Java Model Exception: Error in Java Model (code 979): Invalid path: '/MustHaveJS
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:668)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:605)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1481)
-!SUBENTRY 1 org.eclipse.jdt.core 4 979 2024-06-28 17:20:06.377
-!MESSAGE Invalid path: '/MustHaveJSP/src/main/webapp/14MVCBoard/View.jsp'
+!SUBENTRY 1 org.eclipse.jdt.core 4 979 2024-06-28 17:47:24.256
+!MESSAGE Invalid path: '/MustHaveJSP/src/main/webapp/14MVCBoard/Default.jsp'
 
-!ENTRY org.eclipse.jst.jee.ui 4 0 2024-06-28 17:20:06.379
-!MESSAGE Invalid path: '/MustHaveJSP/src/main/webapp/14MVCBoard/View.jsp'
+!ENTRY org.eclipse.jst.jee.ui 4 0 2024-06-28 17:47:24.258
+!MESSAGE Invalid path: '/MustHaveJSP/src/main/webapp/14MVCBoard/Default.jsp'
 !STACK 1
-Java Model Exception: Error in Java Model (code 979): Invalid path: '/MustHaveJSP/src/main/webapp/14MVCBoard/View.jsp'
+Java Model Exception: Error in Java Model (code 979): Invalid path: '/MustHaveJSP/src/main/webapp/14MVCBoard/Default.jsp'
 	at org.eclipse.jdt.internal.core.JavaProject.findElement(JavaProject.java:1452)
 	at org.eclipse.jdt.internal.core.JavaProject.findElement(JavaProject.java:1442)
 	at org.eclipse.jst.jee.ui.internal.deployables.WebDeployableArtifactUtil.getClassNameForType(WebDeployableArtifactUtil.java:319)
@@ -291,13 +118,13 @@ Java Model Exception: Error in Java Model (code 979): Invalid path: '/MustHaveJS
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:668)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:605)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1481)
-!SUBENTRY 1 org.eclipse.jdt.core 4 979 2024-06-28 17:20:06.379
-!MESSAGE Invalid path: '/MustHaveJSP/src/main/webapp/14MVCBoard/View.jsp'
+!SUBENTRY 1 org.eclipse.jdt.core 4 979 2024-06-28 17:47:24.258
+!MESSAGE Invalid path: '/MustHaveJSP/src/main/webapp/14MVCBoard/Default.jsp'
 
-!ENTRY org.eclipse.jst.jee.ui 4 0 2024-06-28 17:20:06.379
-!MESSAGE Invalid path: '/MustHaveJSP/src/main/webapp/14MVCBoard/View.jsp'
+!ENTRY org.eclipse.jst.jee.ui 4 0 2024-06-28 17:47:24.258
+!MESSAGE Invalid path: '/MustHaveJSP/src/main/webapp/14MVCBoard/Default.jsp'
 !STACK 1
-Java Model Exception: Error in Java Model (code 979): Invalid path: '/MustHaveJSP/src/main/webapp/14MVCBoard/View.jsp'
+Java Model Exception: Error in Java Model (code 979): Invalid path: '/MustHaveJSP/src/main/webapp/14MVCBoard/Default.jsp'
 	at org.eclipse.jdt.internal.core.JavaProject.findElement(JavaProject.java:1452)
 	at org.eclipse.jdt.internal.core.JavaProject.findElement(JavaProject.java:1442)
 	at org.eclipse.jst.jee.ui.internal.deployables.WebDeployableArtifactUtil.getClassNameForType(WebDeployableArtifactUtil.java:319)
@@ -342,13 +169,13 @@ Java Model Exception: Error in Java Model (code 979): Invalid path: '/MustHaveJS
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:668)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:605)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1481)
-!SUBENTRY 1 org.eclipse.jdt.core 4 979 2024-06-28 17:20:06.379
-!MESSAGE Invalid path: '/MustHaveJSP/src/main/webapp/14MVCBoard/View.jsp'
+!SUBENTRY 1 org.eclipse.jdt.core 4 979 2024-06-28 17:47:24.258
+!MESSAGE Invalid path: '/MustHaveJSP/src/main/webapp/14MVCBoard/Default.jsp'
 
-!ENTRY org.eclipse.jst.jee.ui 4 0 2024-06-28 17:20:06.379
-!MESSAGE Invalid path: '/MustHaveJSP/src/main/webapp/14MVCBoard/View.jsp'
+!ENTRY org.eclipse.jst.jee.ui 4 0 2024-06-28 17:47:24.258
+!MESSAGE Invalid path: '/MustHaveJSP/src/main/webapp/14MVCBoard/Default.jsp'
 !STACK 1
-Java Model Exception: Error in Java Model (code 979): Invalid path: '/MustHaveJSP/src/main/webapp/14MVCBoard/View.jsp'
+Java Model Exception: Error in Java Model (code 979): Invalid path: '/MustHaveJSP/src/main/webapp/14MVCBoard/Default.jsp'
 	at org.eclipse.jdt.internal.core.JavaProject.findElement(JavaProject.java:1452)
 	at org.eclipse.jdt.internal.core.JavaProject.findElement(JavaProject.java:1442)
 	at org.eclipse.jst.jee.ui.internal.deployables.WebDeployableArtifactUtil.getClassNameForType(WebDeployableArtifactUtil.java:319)
@@ -393,13 +220,13 @@ Java Model Exception: Error in Java Model (code 979): Invalid path: '/MustHaveJS
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:668)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:605)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1481)
-!SUBENTRY 1 org.eclipse.jdt.core 4 979 2024-06-28 17:20:06.380
-!MESSAGE Invalid path: '/MustHaveJSP/src/main/webapp/14MVCBoard/View.jsp'
+!SUBENTRY 1 org.eclipse.jdt.core 4 979 2024-06-28 17:47:24.259
+!MESSAGE Invalid path: '/MustHaveJSP/src/main/webapp/14MVCBoard/Default.jsp'
 
-!ENTRY org.eclipse.jst.jee.ui 4 0 2024-06-28 17:20:06.380
-!MESSAGE Invalid path: '/MustHaveJSP/src/main/webapp/14MVCBoard/View.jsp'
+!ENTRY org.eclipse.jst.jee.ui 4 0 2024-06-28 17:47:24.259
+!MESSAGE Invalid path: '/MustHaveJSP/src/main/webapp/14MVCBoard/Default.jsp'
 !STACK 1
-Java Model Exception: Error in Java Model (code 979): Invalid path: '/MustHaveJSP/src/main/webapp/14MVCBoard/View.jsp'
+Java Model Exception: Error in Java Model (code 979): Invalid path: '/MustHaveJSP/src/main/webapp/14MVCBoard/Default.jsp'
 	at org.eclipse.jdt.internal.core.JavaProject.findElement(JavaProject.java:1452)
 	at org.eclipse.jdt.internal.core.JavaProject.findElement(JavaProject.java:1442)
 	at org.eclipse.jst.jee.ui.internal.deployables.WebDeployableArtifactUtil.getClassNameForType(WebDeployableArtifactUtil.java:319)
@@ -444,13 +271,13 @@ Java Model Exception: Error in Java Model (code 979): Invalid path: '/MustHaveJS
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:668)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:605)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1481)
-!SUBENTRY 1 org.eclipse.jdt.core 4 979 2024-06-28 17:20:06.380
-!MESSAGE Invalid path: '/MustHaveJSP/src/main/webapp/14MVCBoard/View.jsp'
+!SUBENTRY 1 org.eclipse.jdt.core 4 979 2024-06-28 17:47:24.259
+!MESSAGE Invalid path: '/MustHaveJSP/src/main/webapp/14MVCBoard/Default.jsp'
 
-!ENTRY org.eclipse.jst.jee.ui 4 0 2024-06-28 17:20:06.381
-!MESSAGE Invalid path: '/MustHaveJSP/src/main/webapp/14MVCBoard/View.jsp'
+!ENTRY org.eclipse.jst.jee.ui 4 0 2024-06-28 17:47:24.260
+!MESSAGE Invalid path: '/MustHaveJSP/src/main/webapp/14MVCBoard/Default.jsp'
 !STACK 1
-Java Model Exception: Error in Java Model (code 979): Invalid path: '/MustHaveJSP/src/main/webapp/14MVCBoard/View.jsp'
+Java Model Exception: Error in Java Model (code 979): Invalid path: '/MustHaveJSP/src/main/webapp/14MVCBoard/Default.jsp'
 	at org.eclipse.jdt.internal.core.JavaProject.findElement(JavaProject.java:1452)
 	at org.eclipse.jdt.internal.core.JavaProject.findElement(JavaProject.java:1442)
 	at org.eclipse.jst.jee.ui.internal.deployables.WebDeployableArtifactUtil.getClassNameForType(WebDeployableArtifactUtil.java:319)
@@ -495,13 +322,13 @@ Java Model Exception: Error in Java Model (code 979): Invalid path: '/MustHaveJS
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:668)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:605)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1481)
-!SUBENTRY 1 org.eclipse.jdt.core 4 979 2024-06-28 17:20:06.381
-!MESSAGE Invalid path: '/MustHaveJSP/src/main/webapp/14MVCBoard/View.jsp'
+!SUBENTRY 1 org.eclipse.jdt.core 4 979 2024-06-28 17:47:24.260
+!MESSAGE Invalid path: '/MustHaveJSP/src/main/webapp/14MVCBoard/Default.jsp'
 
-!ENTRY org.eclipse.jst.jee.ui 4 0 2024-06-28 17:20:06.381
-!MESSAGE Invalid path: '/MustHaveJSP/src/main/webapp/14MVCBoard/View.jsp'
+!ENTRY org.eclipse.jst.jee.ui 4 0 2024-06-28 17:47:24.260
+!MESSAGE Invalid path: '/MustHaveJSP/src/main/webapp/14MVCBoard/Default.jsp'
 !STACK 1
-Java Model Exception: Error in Java Model (code 979): Invalid path: '/MustHaveJSP/src/main/webapp/14MVCBoard/View.jsp'
+Java Model Exception: Error in Java Model (code 979): Invalid path: '/MustHaveJSP/src/main/webapp/14MVCBoard/Default.jsp'
 	at org.eclipse.jdt.internal.core.JavaProject.findElement(JavaProject.java:1452)
 	at org.eclipse.jdt.internal.core.JavaProject.findElement(JavaProject.java:1442)
 	at org.eclipse.jst.jee.ui.internal.deployables.WebDeployableArtifactUtil.getClassNameForType(WebDeployableArtifactUtil.java:319)
@@ -546,331 +373,13 @@ Java Model Exception: Error in Java Model (code 979): Invalid path: '/MustHaveJS
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:668)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:605)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1481)
-!SUBENTRY 1 org.eclipse.jdt.core 4 979 2024-06-28 17:20:06.381
-!MESSAGE Invalid path: '/MustHaveJSP/src/main/webapp/14MVCBoard/View.jsp'
+!SUBENTRY 1 org.eclipse.jdt.core 4 979 2024-06-28 17:47:24.260
+!MESSAGE Invalid path: '/MustHaveJSP/src/main/webapp/14MVCBoard/Default.jsp'
 
-!ENTRY org.eclipse.jst.jee.ui 4 0 2024-06-28 17:20:06.382
-!MESSAGE Invalid path: '/MustHaveJSP/src/main/webapp/14MVCBoard/View.jsp'
+!ENTRY org.eclipse.jst.jee.ui 4 0 2024-06-28 17:47:24.261
+!MESSAGE Invalid path: '/MustHaveJSP/src/main/webapp/14MVCBoard/Default.jsp'
 !STACK 1
-Java Model Exception: Error in Java Model (code 979): Invalid path: '/MustHaveJSP/src/main/webapp/14MVCBoard/View.jsp'
-	at org.eclipse.jdt.internal.core.JavaProject.findElement(JavaProject.java:1452)
-	at org.eclipse.jdt.internal.core.JavaProject.findElement(JavaProject.java:1442)
-	at org.eclipse.jst.jee.ui.internal.deployables.WebDeployableArtifactUtil.getClassNameForType(WebDeployableArtifactUtil.java:319)
-	at org.eclipse.jst.jee.ui.internal.deployables.WebDeployableArtifactUtil.isCactusJunitTest(WebDeployableArtifactUtil.java:259)
-	at org.eclipse.jst.jee.ui.internal.deployables.WebDeployableArtifactUtil.getModuleObject(WebDeployableArtifactUtil.java:166)
-	at org.eclipse.jst.jee.ui.internal.deployables.WebDeployableArtifactAdapterFactory.getModuleArtifact(WebDeployableArtifactAdapterFactory.java:33)
-	at org.eclipse.wst.server.core.model.ModuleArtifactAdapterDelegate.getModuleArtifacts(ModuleArtifactAdapterDelegate.java:48)
-	at org.eclipse.wst.server.core.internal.ModuleArtifactAdapter.getModuleArtifacts(ModuleArtifactAdapter.java:185)
-	at org.eclipse.wst.server.core.internal.ServerPlugin.hasModuleArtifact(ServerPlugin.java:1298)
-	at org.eclipse.wst.server.ui.internal.actions.RunOnServerActionDelegate.selectionChanged(RunOnServerActionDelegate.java:840)
-	at org.eclipse.wst.server.ui.internal.ServerLaunchShortcut.launch(ServerLaunchShortcut.java:42)
-	at org.eclipse.wst.server.ui.internal.ServerLaunchShortcut.launch(ServerLaunchShortcut.java:58)
-	at org.eclipse.debug.internal.ui.launchConfigurations.LaunchShortcutExtension.launch(LaunchShortcutExtension.java:412)
-	at org.eclipse.debug.internal.ui.contextlaunching.ContextRunner.launchShortcut(ContextRunner.java:262)
-	at org.eclipse.debug.internal.ui.contextlaunching.ContextRunner.selectAndLaunch(ContextRunner.java:188)
-	at org.eclipse.debug.internal.ui.contextlaunching.ContextRunner.launch(ContextRunner.java:100)
-	at org.eclipse.debug.ui.actions.AbstractLaunchToolbarAction.runInternal(AbstractLaunchToolbarAction.java:90)
-	at org.eclipse.debug.ui.actions.AbstractLaunchHistoryAction.runWithEvent(AbstractLaunchHistoryAction.java:420)
-	at org.eclipse.ui.internal.PluginAction.runWithEvent(PluginAction.java:229)
-	at org.eclipse.ui.internal.WWinPluginAction.runWithEvent(WWinPluginAction.java:218)
-	at org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection(ActionContributionItem.java:581)
-	at org.eclipse.jface.action.ActionContributionItem.lambda$5(ActionContributionItem.java:454)
-	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:91)
-	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4285)
-	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1160)
-	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4083)
-	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3673)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1151)
-	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1042)
-	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:152)
-	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:639)
-	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
-	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:546)
-	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:173)
-	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
-	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:208)
-	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:143)
-	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:109)
-	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:439)
-	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:271)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:668)
-	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:605)
-	at org.eclipse.equinox.launcher.Main.run(Main.java:1481)
-!SUBENTRY 1 org.eclipse.jdt.core 4 979 2024-06-28 17:20:06.382
-!MESSAGE Invalid path: '/MustHaveJSP/src/main/webapp/14MVCBoard/View.jsp'
-
-!ENTRY org.eclipse.jst.jee.ui 4 0 2024-06-28 17:20:06.382
-!MESSAGE Invalid path: '/MustHaveJSP/src/main/webapp/14MVCBoard/View.jsp'
-!STACK 1
-Java Model Exception: Error in Java Model (code 979): Invalid path: '/MustHaveJSP/src/main/webapp/14MVCBoard/View.jsp'
-	at org.eclipse.jdt.internal.core.JavaProject.findElement(JavaProject.java:1452)
-	at org.eclipse.jdt.internal.core.JavaProject.findElement(JavaProject.java:1442)
-	at org.eclipse.jst.jee.ui.internal.deployables.WebDeployableArtifactUtil.getClassNameForType(WebDeployableArtifactUtil.java:319)
-	at org.eclipse.jst.jee.ui.internal.deployables.WebDeployableArtifactUtil.getServletClassName(WebDeployableArtifactUtil.java:276)
-	at org.eclipse.jst.jee.ui.internal.deployables.WebDeployableArtifactUtil.getModuleObject(WebDeployableArtifactUtil.java:175)
-	at org.eclipse.jst.jee.ui.internal.deployables.WebDeployableArtifactAdapterFactory.getModuleArtifact(WebDeployableArtifactAdapterFactory.java:33)
-	at org.eclipse.wst.server.core.model.ModuleArtifactAdapterDelegate.getModuleArtifacts(ModuleArtifactAdapterDelegate.java:48)
-	at org.eclipse.wst.server.core.internal.ModuleArtifactAdapter.getModuleArtifacts(ModuleArtifactAdapter.java:185)
-	at org.eclipse.wst.server.core.internal.ServerPlugin.hasModuleArtifact(ServerPlugin.java:1298)
-	at org.eclipse.wst.server.ui.internal.actions.RunOnServerActionDelegate.selectionChanged(RunOnServerActionDelegate.java:840)
-	at org.eclipse.wst.server.ui.internal.ServerLaunchShortcut.launch(ServerLaunchShortcut.java:42)
-	at org.eclipse.wst.server.ui.internal.ServerLaunchShortcut.launch(ServerLaunchShortcut.java:58)
-	at org.eclipse.debug.internal.ui.launchConfigurations.LaunchShortcutExtension.launch(LaunchShortcutExtension.java:412)
-	at org.eclipse.debug.internal.ui.contextlaunching.ContextRunner.launchShortcut(ContextRunner.java:262)
-	at org.eclipse.debug.internal.ui.contextlaunching.ContextRunner.selectAndLaunch(ContextRunner.java:188)
-	at org.eclipse.debug.internal.ui.contextlaunching.ContextRunner.launch(ContextRunner.java:100)
-	at org.eclipse.debug.ui.actions.AbstractLaunchToolbarAction.runInternal(AbstractLaunchToolbarAction.java:90)
-	at org.eclipse.debug.ui.actions.AbstractLaunchHistoryAction.runWithEvent(AbstractLaunchHistoryAction.java:420)
-	at org.eclipse.ui.internal.PluginAction.runWithEvent(PluginAction.java:229)
-	at org.eclipse.ui.internal.WWinPluginAction.runWithEvent(WWinPluginAction.java:218)
-	at org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection(ActionContributionItem.java:581)
-	at org.eclipse.jface.action.ActionContributionItem.lambda$5(ActionContributionItem.java:454)
-	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:91)
-	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4285)
-	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1160)
-	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4083)
-	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3673)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1151)
-	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1042)
-	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:152)
-	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:639)
-	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
-	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:546)
-	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:173)
-	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
-	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:208)
-	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:143)
-	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:109)
-	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:439)
-	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:271)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:668)
-	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:605)
-	at org.eclipse.equinox.launcher.Main.run(Main.java:1481)
-!SUBENTRY 1 org.eclipse.jdt.core 4 979 2024-06-28 17:20:06.382
-!MESSAGE Invalid path: '/MustHaveJSP/src/main/webapp/14MVCBoard/View.jsp'
-
-!ENTRY org.eclipse.jst.jee.ui 4 0 2024-06-28 17:20:06.382
-!MESSAGE Invalid path: '/MustHaveJSP/src/main/webapp/14MVCBoard/View.jsp'
-!STACK 1
-Java Model Exception: Error in Java Model (code 979): Invalid path: '/MustHaveJSP/src/main/webapp/14MVCBoard/View.jsp'
-	at org.eclipse.jdt.internal.core.JavaProject.findElement(JavaProject.java:1452)
-	at org.eclipse.jdt.internal.core.JavaProject.findElement(JavaProject.java:1442)
-	at org.eclipse.jst.jee.ui.internal.deployables.WebDeployableArtifactUtil.getClassNameForType(WebDeployableArtifactUtil.java:319)
-	at org.eclipse.jst.jee.ui.internal.deployables.WebDeployableArtifactUtil.getServletClassName(WebDeployableArtifactUtil.java:280)
-	at org.eclipse.jst.jee.ui.internal.deployables.WebDeployableArtifactUtil.getModuleObject(WebDeployableArtifactUtil.java:175)
-	at org.eclipse.jst.jee.ui.internal.deployables.WebDeployableArtifactAdapterFactory.getModuleArtifact(WebDeployableArtifactAdapterFactory.java:33)
-	at org.eclipse.wst.server.core.model.ModuleArtifactAdapterDelegate.getModuleArtifacts(ModuleArtifactAdapterDelegate.java:48)
-	at org.eclipse.wst.server.core.internal.ModuleArtifactAdapter.getModuleArtifacts(ModuleArtifactAdapter.java:185)
-	at org.eclipse.wst.server.core.internal.ServerPlugin.hasModuleArtifact(ServerPlugin.java:1298)
-	at org.eclipse.wst.server.ui.internal.actions.RunOnServerActionDelegate.selectionChanged(RunOnServerActionDelegate.java:840)
-	at org.eclipse.wst.server.ui.internal.ServerLaunchShortcut.launch(ServerLaunchShortcut.java:42)
-	at org.eclipse.wst.server.ui.internal.ServerLaunchShortcut.launch(ServerLaunchShortcut.java:58)
-	at org.eclipse.debug.internal.ui.launchConfigurations.LaunchShortcutExtension.launch(LaunchShortcutExtension.java:412)
-	at org.eclipse.debug.internal.ui.contextlaunching.ContextRunner.launchShortcut(ContextRunner.java:262)
-	at org.eclipse.debug.internal.ui.contextlaunching.ContextRunner.selectAndLaunch(ContextRunner.java:188)
-	at org.eclipse.debug.internal.ui.contextlaunching.ContextRunner.launch(ContextRunner.java:100)
-	at org.eclipse.debug.ui.actions.AbstractLaunchToolbarAction.runInternal(AbstractLaunchToolbarAction.java:90)
-	at org.eclipse.debug.ui.actions.AbstractLaunchHistoryAction.runWithEvent(AbstractLaunchHistoryAction.java:420)
-	at org.eclipse.ui.internal.PluginAction.runWithEvent(PluginAction.java:229)
-	at org.eclipse.ui.internal.WWinPluginAction.runWithEvent(WWinPluginAction.java:218)
-	at org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection(ActionContributionItem.java:581)
-	at org.eclipse.jface.action.ActionContributionItem.lambda$5(ActionContributionItem.java:454)
-	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:91)
-	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4285)
-	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1160)
-	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4083)
-	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3673)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1151)
-	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1042)
-	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:152)
-	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:639)
-	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
-	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:546)
-	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:173)
-	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
-	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:208)
-	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:143)
-	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:109)
-	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:439)
-	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:271)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:668)
-	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:605)
-	at org.eclipse.equinox.launcher.Main.run(Main.java:1481)
-!SUBENTRY 1 org.eclipse.jdt.core 4 979 2024-06-28 17:20:06.382
-!MESSAGE Invalid path: '/MustHaveJSP/src/main/webapp/14MVCBoard/View.jsp'
-
-!ENTRY org.eclipse.jst.jee.ui 4 0 2024-06-28 17:20:06.383
-!MESSAGE Invalid path: '/MustHaveJSP/src/main/webapp/14MVCBoard/View.jsp'
-!STACK 1
-Java Model Exception: Error in Java Model (code 979): Invalid path: '/MustHaveJSP/src/main/webapp/14MVCBoard/View.jsp'
-	at org.eclipse.jdt.internal.core.JavaProject.findElement(JavaProject.java:1452)
-	at org.eclipse.jdt.internal.core.JavaProject.findElement(JavaProject.java:1442)
-	at org.eclipse.jst.jee.ui.internal.deployables.WebDeployableArtifactUtil.getClassNameForType(WebDeployableArtifactUtil.java:319)
-	at org.eclipse.jst.jee.ui.internal.deployables.WebDeployableArtifactUtil.isCactusJunitTest(WebDeployableArtifactUtil.java:259)
-	at org.eclipse.jst.jee.ui.internal.deployables.WebDeployableArtifactUtil.getModuleObject(WebDeployableArtifactUtil.java:166)
-	at org.eclipse.jst.jee.ui.internal.deployables.WebDeployableArtifactAdapterFactory.getModuleArtifact(WebDeployableArtifactAdapterFactory.java:33)
-	at org.eclipse.wst.server.core.model.ModuleArtifactAdapterDelegate.getModuleArtifacts(ModuleArtifactAdapterDelegate.java:48)
-	at org.eclipse.wst.server.core.internal.ModuleArtifactAdapter.getModuleArtifacts(ModuleArtifactAdapter.java:185)
-	at org.eclipse.wst.server.core.internal.ServerPlugin.getModuleArtifacts(ServerPlugin.java:1346)
-	at org.eclipse.wst.server.ui.internal.actions.RunOnServerActionDelegate.selectionChanged(RunOnServerActionDelegate.java:849)
-	at org.eclipse.wst.server.ui.internal.ServerLaunchShortcut.launch(ServerLaunchShortcut.java:42)
-	at org.eclipse.wst.server.ui.internal.ServerLaunchShortcut.launch(ServerLaunchShortcut.java:58)
-	at org.eclipse.debug.internal.ui.launchConfigurations.LaunchShortcutExtension.launch(LaunchShortcutExtension.java:412)
-	at org.eclipse.debug.internal.ui.contextlaunching.ContextRunner.launchShortcut(ContextRunner.java:262)
-	at org.eclipse.debug.internal.ui.contextlaunching.ContextRunner.selectAndLaunch(ContextRunner.java:188)
-	at org.eclipse.debug.internal.ui.contextlaunching.ContextRunner.launch(ContextRunner.java:100)
-	at org.eclipse.debug.ui.actions.AbstractLaunchToolbarAction.runInternal(AbstractLaunchToolbarAction.java:90)
-	at org.eclipse.debug.ui.actions.AbstractLaunchHistoryAction.runWithEvent(AbstractLaunchHistoryAction.java:420)
-	at org.eclipse.ui.internal.PluginAction.runWithEvent(PluginAction.java:229)
-	at org.eclipse.ui.internal.WWinPluginAction.runWithEvent(WWinPluginAction.java:218)
-	at org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection(ActionContributionItem.java:581)
-	at org.eclipse.jface.action.ActionContributionItem.lambda$5(ActionContributionItem.java:454)
-	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:91)
-	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4285)
-	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1160)
-	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4083)
-	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3673)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1151)
-	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1042)
-	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:152)
-	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:639)
-	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
-	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:546)
-	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:173)
-	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
-	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:208)
-	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:143)
-	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:109)
-	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:439)
-	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:271)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:668)
-	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:605)
-	at org.eclipse.equinox.launcher.Main.run(Main.java:1481)
-!SUBENTRY 1 org.eclipse.jdt.core 4 979 2024-06-28 17:20:06.383
-!MESSAGE Invalid path: '/MustHaveJSP/src/main/webapp/14MVCBoard/View.jsp'
-
-!ENTRY org.eclipse.jst.jee.ui 4 0 2024-06-28 17:20:06.383
-!MESSAGE Invalid path: '/MustHaveJSP/src/main/webapp/14MVCBoard/View.jsp'
-!STACK 1
-Java Model Exception: Error in Java Model (code 979): Invalid path: '/MustHaveJSP/src/main/webapp/14MVCBoard/View.jsp'
-	at org.eclipse.jdt.internal.core.JavaProject.findElement(JavaProject.java:1452)
-	at org.eclipse.jdt.internal.core.JavaProject.findElement(JavaProject.java:1442)
-	at org.eclipse.jst.jee.ui.internal.deployables.WebDeployableArtifactUtil.getClassNameForType(WebDeployableArtifactUtil.java:319)
-	at org.eclipse.jst.jee.ui.internal.deployables.WebDeployableArtifactUtil.getServletClassName(WebDeployableArtifactUtil.java:276)
-	at org.eclipse.jst.jee.ui.internal.deployables.WebDeployableArtifactUtil.getModuleObject(WebDeployableArtifactUtil.java:175)
-	at org.eclipse.jst.jee.ui.internal.deployables.WebDeployableArtifactAdapterFactory.getModuleArtifact(WebDeployableArtifactAdapterFactory.java:33)
-	at org.eclipse.wst.server.core.model.ModuleArtifactAdapterDelegate.getModuleArtifacts(ModuleArtifactAdapterDelegate.java:48)
-	at org.eclipse.wst.server.core.internal.ModuleArtifactAdapter.getModuleArtifacts(ModuleArtifactAdapter.java:185)
-	at org.eclipse.wst.server.core.internal.ServerPlugin.getModuleArtifacts(ServerPlugin.java:1346)
-	at org.eclipse.wst.server.ui.internal.actions.RunOnServerActionDelegate.selectionChanged(RunOnServerActionDelegate.java:849)
-	at org.eclipse.wst.server.ui.internal.ServerLaunchShortcut.launch(ServerLaunchShortcut.java:42)
-	at org.eclipse.wst.server.ui.internal.ServerLaunchShortcut.launch(ServerLaunchShortcut.java:58)
-	at org.eclipse.debug.internal.ui.launchConfigurations.LaunchShortcutExtension.launch(LaunchShortcutExtension.java:412)
-	at org.eclipse.debug.internal.ui.contextlaunching.ContextRunner.launchShortcut(ContextRunner.java:262)
-	at org.eclipse.debug.internal.ui.contextlaunching.ContextRunner.selectAndLaunch(ContextRunner.java:188)
-	at org.eclipse.debug.internal.ui.contextlaunching.ContextRunner.launch(ContextRunner.java:100)
-	at org.eclipse.debug.ui.actions.AbstractLaunchToolbarAction.runInternal(AbstractLaunchToolbarAction.java:90)
-	at org.eclipse.debug.ui.actions.AbstractLaunchHistoryAction.runWithEvent(AbstractLaunchHistoryAction.java:420)
-	at org.eclipse.ui.internal.PluginAction.runWithEvent(PluginAction.java:229)
-	at org.eclipse.ui.internal.WWinPluginAction.runWithEvent(WWinPluginAction.java:218)
-	at org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection(ActionContributionItem.java:581)
-	at org.eclipse.jface.action.ActionContributionItem.lambda$5(ActionContributionItem.java:454)
-	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:91)
-	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4285)
-	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1160)
-	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4083)
-	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3673)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1151)
-	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1042)
-	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:152)
-	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:639)
-	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
-	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:546)
-	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:173)
-	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
-	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:208)
-	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:143)
-	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:109)
-	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:439)
-	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:271)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:668)
-	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:605)
-	at org.eclipse.equinox.launcher.Main.run(Main.java:1481)
-!SUBENTRY 1 org.eclipse.jdt.core 4 979 2024-06-28 17:20:06.384
-!MESSAGE Invalid path: '/MustHaveJSP/src/main/webapp/14MVCBoard/View.jsp'
-
-!ENTRY org.eclipse.jst.jee.ui 4 0 2024-06-28 17:20:06.384
-!MESSAGE Invalid path: '/MustHaveJSP/src/main/webapp/14MVCBoard/View.jsp'
-!STACK 1
-Java Model Exception: Error in Java Model (code 979): Invalid path: '/MustHaveJSP/src/main/webapp/14MVCBoard/View.jsp'
-	at org.eclipse.jdt.internal.core.JavaProject.findElement(JavaProject.java:1452)
-	at org.eclipse.jdt.internal.core.JavaProject.findElement(JavaProject.java:1442)
-	at org.eclipse.jst.jee.ui.internal.deployables.WebDeployableArtifactUtil.getClassNameForType(WebDeployableArtifactUtil.java:319)
-	at org.eclipse.jst.jee.ui.internal.deployables.WebDeployableArtifactUtil.getServletClassName(WebDeployableArtifactUtil.java:280)
-	at org.eclipse.jst.jee.ui.internal.deployables.WebDeployableArtifactUtil.getModuleObject(WebDeployableArtifactUtil.java:175)
-	at org.eclipse.jst.jee.ui.internal.deployables.WebDeployableArtifactAdapterFactory.getModuleArtifact(WebDeployableArtifactAdapterFactory.java:33)
-	at org.eclipse.wst.server.core.model.ModuleArtifactAdapterDelegate.getModuleArtifacts(ModuleArtifactAdapterDelegate.java:48)
-	at org.eclipse.wst.server.core.internal.ModuleArtifactAdapter.getModuleArtifacts(ModuleArtifactAdapter.java:185)
-	at org.eclipse.wst.server.core.internal.ServerPlugin.getModuleArtifacts(ServerPlugin.java:1346)
-	at org.eclipse.wst.server.ui.internal.actions.RunOnServerActionDelegate.selectionChanged(RunOnServerActionDelegate.java:849)
-	at org.eclipse.wst.server.ui.internal.ServerLaunchShortcut.launch(ServerLaunchShortcut.java:42)
-	at org.eclipse.wst.server.ui.internal.ServerLaunchShortcut.launch(ServerLaunchShortcut.java:58)
-	at org.eclipse.debug.internal.ui.launchConfigurations.LaunchShortcutExtension.launch(LaunchShortcutExtension.java:412)
-	at org.eclipse.debug.internal.ui.contextlaunching.ContextRunner.launchShortcut(ContextRunner.java:262)
-	at org.eclipse.debug.internal.ui.contextlaunching.ContextRunner.selectAndLaunch(ContextRunner.java:188)
-	at org.eclipse.debug.internal.ui.contextlaunching.ContextRunner.launch(ContextRunner.java:100)
-	at org.eclipse.debug.ui.actions.AbstractLaunchToolbarAction.runInternal(AbstractLaunchToolbarAction.java:90)
-	at org.eclipse.debug.ui.actions.AbstractLaunchHistoryAction.runWithEvent(AbstractLaunchHistoryAction.java:420)
-	at org.eclipse.ui.internal.PluginAction.runWithEvent(PluginAction.java:229)
-	at org.eclipse.ui.internal.WWinPluginAction.runWithEvent(WWinPluginAction.java:218)
-	at org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection(ActionContributionItem.java:581)
-	at org.eclipse.jface.action.ActionContributionItem.lambda$5(ActionContributionItem.java:454)
-	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:91)
-	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4285)
-	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1160)
-	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4083)
-	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3673)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1151)
-	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1042)
-	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:152)
-	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:639)
-	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
-	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:546)
-	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:173)
-	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
-	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:208)
-	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:143)
-	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:109)
-	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:439)
-	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:271)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:668)
-	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:605)
-	at org.eclipse.equinox.launcher.Main.run(Main.java:1481)
-!SUBENTRY 1 org.eclipse.jdt.core 4 979 2024-06-28 17:20:06.384
-!MESSAGE Invalid path: '/MustHaveJSP/src/main/webapp/14MVCBoard/View.jsp'
-
-!ENTRY org.eclipse.jst.jee.ui 4 0 2024-06-28 17:20:06.385
-!MESSAGE Invalid path: '/MustHaveJSP/src/main/webapp/14MVCBoard/View.jsp'
-!STACK 1
-Java Model Exception: Error in Java Model (code 979): Invalid path: '/MustHaveJSP/src/main/webapp/14MVCBoard/View.jsp'
+Java Model Exception: Error in Java Model (code 979): Invalid path: '/MustHaveJSP/src/main/webapp/14MVCBoard/Default.jsp'
 	at org.eclipse.jdt.internal.core.JavaProject.findElement(JavaProject.java:1452)
 	at org.eclipse.jdt.internal.core.JavaProject.findElement(JavaProject.java:1442)
 	at org.eclipse.jst.jee.ui.internal.deployables.WebDeployableArtifactUtil.getClassNameForType(WebDeployableArtifactUtil.java:319)
@@ -918,13 +427,13 @@ Java Model Exception: Error in Java Model (code 979): Invalid path: '/MustHaveJS
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:668)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:605)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1481)
-!SUBENTRY 1 org.eclipse.jdt.core 4 979 2024-06-28 17:20:06.385
-!MESSAGE Invalid path: '/MustHaveJSP/src/main/webapp/14MVCBoard/View.jsp'
+!SUBENTRY 1 org.eclipse.jdt.core 4 979 2024-06-28 17:47:24.261
+!MESSAGE Invalid path: '/MustHaveJSP/src/main/webapp/14MVCBoard/Default.jsp'
 
-!ENTRY org.eclipse.jst.jee.ui 4 0 2024-06-28 17:20:06.385
-!MESSAGE Invalid path: '/MustHaveJSP/src/main/webapp/14MVCBoard/View.jsp'
+!ENTRY org.eclipse.jst.jee.ui 4 0 2024-06-28 17:47:24.261
+!MESSAGE Invalid path: '/MustHaveJSP/src/main/webapp/14MVCBoard/Default.jsp'
 !STACK 1
-Java Model Exception: Error in Java Model (code 979): Invalid path: '/MustHaveJSP/src/main/webapp/14MVCBoard/View.jsp'
+Java Model Exception: Error in Java Model (code 979): Invalid path: '/MustHaveJSP/src/main/webapp/14MVCBoard/Default.jsp'
 	at org.eclipse.jdt.internal.core.JavaProject.findElement(JavaProject.java:1452)
 	at org.eclipse.jdt.internal.core.JavaProject.findElement(JavaProject.java:1442)
 	at org.eclipse.jst.jee.ui.internal.deployables.WebDeployableArtifactUtil.getClassNameForType(WebDeployableArtifactUtil.java:319)
@@ -972,13 +481,13 @@ Java Model Exception: Error in Java Model (code 979): Invalid path: '/MustHaveJS
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:668)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:605)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1481)
-!SUBENTRY 1 org.eclipse.jdt.core 4 979 2024-06-28 17:20:06.385
-!MESSAGE Invalid path: '/MustHaveJSP/src/main/webapp/14MVCBoard/View.jsp'
+!SUBENTRY 1 org.eclipse.jdt.core 4 979 2024-06-28 17:47:24.261
+!MESSAGE Invalid path: '/MustHaveJSP/src/main/webapp/14MVCBoard/Default.jsp'
 
-!ENTRY org.eclipse.jst.jee.ui 4 0 2024-06-28 17:20:06.385
-!MESSAGE Invalid path: '/MustHaveJSP/src/main/webapp/14MVCBoard/View.jsp'
+!ENTRY org.eclipse.jst.jee.ui 4 0 2024-06-28 17:47:24.261
+!MESSAGE Invalid path: '/MustHaveJSP/src/main/webapp/14MVCBoard/Default.jsp'
 !STACK 1
-Java Model Exception: Error in Java Model (code 979): Invalid path: '/MustHaveJSP/src/main/webapp/14MVCBoard/View.jsp'
+Java Model Exception: Error in Java Model (code 979): Invalid path: '/MustHaveJSP/src/main/webapp/14MVCBoard/Default.jsp'
 	at org.eclipse.jdt.internal.core.JavaProject.findElement(JavaProject.java:1452)
 	at org.eclipse.jdt.internal.core.JavaProject.findElement(JavaProject.java:1442)
 	at org.eclipse.jst.jee.ui.internal.deployables.WebDeployableArtifactUtil.getClassNameForType(WebDeployableArtifactUtil.java:319)
@@ -1026,5 +535,5 @@ Java Model Exception: Error in Java Model (code 979): Invalid path: '/MustHaveJS
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:668)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:605)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1481)
-!SUBENTRY 1 org.eclipse.jdt.core 4 979 2024-06-28 17:20:06.385
-!MESSAGE Invalid path: '/MustHaveJSP/src/main/webapp/14MVCBoard/View.jsp'
+!SUBENTRY 1 org.eclipse.jdt.core 4 979 2024-06-28 17:47:24.262
+!MESSAGE Invalid path: '/MustHaveJSP/src/main/webapp/14MVCBoard/Default.jsp'

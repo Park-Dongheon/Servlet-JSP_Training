@@ -15,7 +15,8 @@ public class WriteController extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		req.getRequestDispatcher("/14MVCBoard/Write.jsp").forward(req, resp);
+//		req.getRequestDispatcher("/14MVCBoard/Write.jsp").forward(req, resp);
+		req.getRequestDispatcher(getServletContext().getInitParameter("VIEWPATH") + "/14MVCBoard/Write.jsp").forward(req, resp);
 	}
 
 	@Override

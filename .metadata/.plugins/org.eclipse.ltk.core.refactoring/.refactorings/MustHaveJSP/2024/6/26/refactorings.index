@@ -5,3 +5,13 @@
 1719390849696	Delete element
 1719390895770	Delete element
 1719390917452	Copy compilation unit
+1719563058831	Move 'Write.jsp' to 'views'
+1719563062375	Move 'View.jsp' to 'views'
+1719563065248	Move 'Pass.jsp' to 'views'
+1719563070507	Move 'Edit.jsp' to 'views'
+1719563072740	Move 'List.jsp' to 'views'
+1719564005457	Move 'Edit.jsp' to '14MVCBoard'
+1719564007341	Move 'List.jsp' to '14MVCBoard'
+1719564008505	Move 'Pass.jsp' to '14MVCBoard'
+1719564009501	Move 'View.jsp' to '14MVCBoard'
+1719564010718	Move 'Write.jsp' to '14MVCBoard'

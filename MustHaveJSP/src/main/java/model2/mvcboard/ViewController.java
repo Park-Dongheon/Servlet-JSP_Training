@@ -12,6 +12,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 @WebServlet("/mvcboard/view.do")
 public class ViewController extends HttpServlet {
+	private static final long serialVersionUID = 1L;
 
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -43,7 +44,8 @@ public class ViewController extends HttpServlet {
 		// 게시물(dto) 저장 후 뷰로 포워드
 		req.setAttribute("dto", dto);
 		req.setAttribute("isImage", isImage);
-		req.getRequestDispatcher("/14MVCBoard/View.jsp").forward(req, resp);
+//		req.getRequestDispatcher("/14MVCBoard/View.jsp").forward(req, resp);
+		req.getRequestDispatcher(getServletContext().getInitParameter("VIEWPATH") + "/14MVCBoard/View.jsp").forward(req, resp);
 	}
 
 }

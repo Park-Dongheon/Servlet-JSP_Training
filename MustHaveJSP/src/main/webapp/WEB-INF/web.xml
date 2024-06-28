@@ -118,8 +118,8 @@
   </servlet-mapping>
   
   <context-param>
-  	<param-name>VIEWPATH</param-name>
-  	<param-value>/WEB-INF/views</param-value>
+  	<param-name>VIEWPATH</param-name>	<!-- 경롤르 정의하는 매개 변수 -->
+  	<param-value>/WEB-INF/views</param-value>	<!-- Java 웹 애플리케이션의 중요한 구성 요소 -->
   </context-param>
   
   <!-- 에러 코드, 특정 HTTP 에러 코드가 발생할 때 사용자 정의 에러 페이지를 지정하는 설정 -->

@@ -76,9 +76,15 @@ public class ListController extends HttpServlet {
 		// 전달할 데이터를 request 영역에 저장 후 List.jsp로 포워드
 		req.setAttribute("boardLists", boardLists);
 		req.setAttribute("map", map);
-		req.getRequestDispatcher("/14MVCBoard/List.jsp").forward(req, resp);
+//		req.getRequestDispatcher("/14MVCBoard/List.jsp").forward(req, resp);
 		
 		req.getRequestDispatcher(getServletContext().getInitParameter("VIEWPATH") + "/14MVCBoard/List.jsp").forward(req, resp);
+		// 보안 및 구성 요소의 위치를 관리
+		// WEB-INF 폴더는 웹 서버에 의해 직접 접근이 불가능합니다. 즉, 브라우저를 통해 URL로 접근할 수 없습니다. 이로 인해 민감한 설정 파일이나 클래스 파일을 안전하게 저장
+		// 위치: WEB-INF/web.xml, 역할: 웹 애플리케이션의 배치 설명자(Deployment Descriptor)입니다. 서블릿, 필터, 리스너, 세션 구성, MIME 타입 매핑 등을 정의
+		// 위치: WEB-INF/lib/, 역할: 웹 애플리케이션에서 사용하는 외부 라이브러리(JAR 파일)를 포함
+		// Tomcat 서버가 시작될 때 WEB-INF 폴더를 스캔하여 web.xml 파일을 읽고, 그에 따라 서블릿 및 기타 구성 요소를 초기화
+		// WEB-INF/classes/ 및 WEB-INF/lib/의 모든 클래스 및 라이브러리는 애플리케이션 클래스 로더에 의해 로드되어 웹 애플리케이션에서 사용
 	}
 
 }
