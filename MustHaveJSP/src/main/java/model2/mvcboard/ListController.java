@@ -13,6 +13,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import utils.BoardPage;
 
 public class ListController extends HttpServlet {
+	private static final long serialVersionUID = 1L;
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -76,6 +77,8 @@ public class ListController extends HttpServlet {
 		req.setAttribute("boardLists", boardLists);
 		req.setAttribute("map", map);
 		req.getRequestDispatcher("/14MVCBoard/List.jsp").forward(req, resp);
+		
+		req.getRequestDispatcher(getServletContext().getInitParameter("VIEWPATH") + "/14MVCBoard/List.jsp").forward(req, resp);
 	}
 
 }

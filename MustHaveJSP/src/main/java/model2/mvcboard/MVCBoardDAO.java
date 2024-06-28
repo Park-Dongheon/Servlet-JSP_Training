@@ -225,4 +225,141 @@ public class MVCBoardDAO extends JDBConnect {
 				
 	}
 	
+	// 다운로드 횟수를 1 증가시킵니다.
+	public void downCountPlus(String idx) {
+		// 쿼리문 준비
+		String query = "UPDATE mvcboard SET "
+					 + " downcount=downcount + 1 "
+					 + " WHERE idx = ?";
+		
+		PreparedStatement psmt = null;
+		
+		try {
+			psmt = getConnection().prepareStatement(query);
+			psmt.setString(1, idx);		// 인파라미터를 일련번호로 설정
+			psmt.executeUpdate();		// 쿼리 실행
+		} catch (Exception e) {
+			System.out.println("다운로드 조회수 증가 중 예외 발생");
+			e.printStackTrace();
+		} finally {
+			try {
+				psmt.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+				
+	}
+	
+	// 입력한 비밀번호가 지정한 일련번호의 게시물의 비밀번호와 일치하는지 확인합니다.
+	public boolean confirmPassword(String pass, String idx) {
+		boolean isCorr = true;
+		
+		PreparedStatement psmt = null;
+		ResultSet rs = null;
+		
+		try {
+			// 쿼리문 템플릿
+			String query = "SELECT COUNT(*) FROM mvcboard WHERE pass=? AND idx=? ";
+			
+			// 쿼리문 완성
+			psmt = getConnection().prepareStatement(query);
+			psmt.setString(1, pass);
+			psmt.setString(2, idx);
+			
+			// 쿼리문 실행
+			rs = psmt.executeQuery();
+			rs.next();
+			if (rs.getInt(1) == 0) {
+				isCorr = false;
+				System.out.println("게시물의 비밀번호와 일치하지 않습니다.");
+			}
+		} catch (Exception e) {
+			isCorr = false;
+			System.out.println("게시물의 비밀번호와 일치하지 않습니다.");
+			e.printStackTrace();
+		} finally {
+			try {
+				rs.close();
+				psmt.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+		return isCorr;		// 결과 반환
+	}
+	
+	// 지정한 일련번호의 게시물을 삭제합니다.
+	public int deletePost(String idx) {
+		int result = 0;
+		
+		PreparedStatement psmt = null;
+		
+		try {
+			// 쿼리문 템플릿
+			String query = "DELETE FROM mvcboard WHERE idx = ?";
+			
+			// 쿼리문 완성
+			psmt = getConnection().prepareStatement(query);
+			psmt.setString(1, idx);
+			
+			// 쿼리문 실행
+			result = psmt.executeUpdate();
+		} catch (Exception e) {
+			System.out.println("게시물 삭제 중 예외 발생");
+			e.printStackTrace();
+		} finally {
+			try {
+				psmt.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+		return result;		// 결과 반환
+	}
+	
+	// 게시글 데이터를 받아 DB에 저장되어 있던 내용을 갱신합니다(파일 업로드 지원).
+	public int updatePost(MVCBoardDTO dto) {
+		int result = 0;
+		
+		PreparedStatement psmt = null;
+		
+		try {
+			// 쿼리문 템플릿
+			String query = "UPDATE mvcboard SET "
+						 + " title = ?, name = ?, content = ?, ofile = ?, sfile = ? "
+						 + " WHERE idx = ? and pass = ? ";
+			
+			// 쿼리문 완성
+			psmt = getConnection().prepareStatement(query);
+			psmt.setString(1, dto.getTitle());
+	        psmt.setString(2, dto.getName());
+	        psmt.setString(3, dto.getContent());
+	        psmt.setString(4, dto.getOfile());
+	        psmt.setString(5, dto.getSfile());
+	        psmt.setString(6, dto.getIdx());
+	        psmt.setString(7, dto.getPass());
+			
+			// 쿼리문 실행
+			result = psmt.executeUpdate();
+		} catch (Exception e) {
+			System.out.println("게시물 수정 중 예외 발생");
+			e.printStackTrace();
+		} finally {
+			try {
+				psmt.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+		return result;		// 결과 반환
+	}
+	
 }

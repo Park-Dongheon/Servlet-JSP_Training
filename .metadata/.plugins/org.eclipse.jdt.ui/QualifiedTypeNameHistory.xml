@@ -4,7 +4,6 @@
     <fullyQualifiedTypeName name="jakarta.servlet.http.HttpServletRequest"/>
     <fullyQualifiedTypeName name="java.sql.Date"/>
     <fullyQualifiedTypeName name="common.JDBConnect"/>
-    <fullyQualifiedTypeName name="java.io.File"/>
     <fullyQualifiedTypeName name="java.util.Date"/>
     <fullyQualifiedTypeName name="fileupload.FIleUtil"/>
     <fullyQualifiedTypeName name="java.sql.Statement"/>
@@ -12,6 +11,11 @@
     <fullyQualifiedTypeName name="java.util.Map"/>
     <fullyQualifiedTypeName name="java.util.HashMap"/>
     <fullyQualifiedTypeName name="utils.BoardPage"/>
-    <fullyQualifiedTypeName name="utils.JSFunction"/>
     <fullyQualifiedTypeName name="java.util.Arrays"/>
+    <fullyQualifiedTypeName name="java.io.File"/>
+    <fullyQualifiedTypeName name="java.io.InputStream"/>
+    <fullyQualifiedTypeName name="java.io.FileInputStream"/>
+    <fullyQualifiedTypeName name="fileupload.FileUtil"/>
+    <fullyQualifiedTypeName name="utils.JSFunction"/>
+    <fullyQualifiedTypeName name="model2.mvcboard.MVCBoardDTO"/>
 </qualifiedTypeNameHistroy>

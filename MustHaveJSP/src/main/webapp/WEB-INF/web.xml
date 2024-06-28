@@ -117,6 +117,11 @@
   	<url-pattern>/mvcboard/write.do</url-pattern>	<!-- 요청명 -->
   </servlet-mapping>
   
+  <context-param>
+  	<param-name>VIEWPATH</param-name>
+  	<param-value>/WEB-INF/views</param-value>
+  </context-param>
+  
   <!-- 에러 코드, 특정 HTTP 에러 코드가 발생할 때 사용자 정의 에러 페이지를 지정하는 설정 -->
   <!-- error-page 요소는 특정 에러 코드에 대한 사용자 정의 에러 페이지를 정의 -->
 

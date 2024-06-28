@@ -66,6 +66,11 @@
 			</td>
 		</tr>
 		</c:forEach>
+		<c:forEach items="${ VIEWPATH }" var="list">
+		<li>
+			${list}
+		</li>
+		</c:forEach>
 	</c:otherwise>
 </c:choose>
 	</table>

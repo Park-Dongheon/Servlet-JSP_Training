@@ -13,7 +13,7 @@
 		<item key="create_package_info_java" value="false"/>
 	</section>
 	<section name="NewClassCreationWizard.dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="830"/>
+		<item key="DIALOG_X_ORIGIN" value="745"/>
 		<item key="DIALOG_Y_ORIGIN" value="179"/>
 		<item key="DIALOG_WIDTH" value="575"/>
 		<item key="DIALOG_HEIGHT" value="659"/>

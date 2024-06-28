@@ -41,7 +41,7 @@ public class JSFunction {
 					+ "		alert('" + msg + "');"
 					+ "		location.href='" + url + "';"
 					+ "</script>";
-			writer.println(msg);	// 자바스크립트 코드를 out 내장 객체로 출력(삽입)
+			writer.println(script);
 		}
 		catch (Exception e) {}
 	}
@@ -56,7 +56,7 @@ public class JSFunction {
 					+ "		alert('" + msg + "');"
 					+ "		history.back();"
 					+ "</script>";
-			writer.println(script);	// 자바스크립트 코드를 out 내장 객체로 출력(삽입)
+			writer.println(script);
 		}
 		catch (Exception e) {}
 	}
