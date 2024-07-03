@@ -1,0 +1,8 @@
+package filter;
+
+import jakarta.servlet.annotation.WebFilter;
+
+@WebFilter(filterName="AnnoFilter", urlPatterns="/15FilterListener/AnnoFilter.jsp")
+public class AnnoFilter {
+
+}

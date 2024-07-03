@@ -1,0 +1,8 @@
+package websocket;
+
+import jakarta.websocket.server.ServerEndpoint;
+
+@ServerEndpoint("/ChatingServer")
+public class ChatServer {
+
+}

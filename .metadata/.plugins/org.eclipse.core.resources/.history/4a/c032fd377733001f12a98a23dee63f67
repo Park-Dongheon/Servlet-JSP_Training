@@ -1,7 +1,0 @@
-package mission;
-
-import jakarta.servlet.http.HttpServlet;
-
-public class MusthaveServlet extends HttpServlet {
-
-}

@@ -1,0 +1,19 @@
+package websocket;
+
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Set;
+
+import jakarta.websocket.Session;
+import jakarta.websocket.server.ServerEndpoint;
+
+@ServerEndpoint("/ChatingServer")
+public class ChatServer {
+	private static Set<Session> clients = Collections.synchronizedSet(new HashSet<Session>());
+	
+	@OnOpen	// 클라이언트 접속 시 실행
+	public void onOpen(Session session) {
+		clients.add(session);		// 세션 추가
+		System.out.println("웹소켓 연결:" + session.getId());
+	}
+}

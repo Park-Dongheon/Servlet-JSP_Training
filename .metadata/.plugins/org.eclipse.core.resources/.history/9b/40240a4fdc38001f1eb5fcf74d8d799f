@@ -1,0 +1,8 @@
+package filter;
+
+import jakarta.servlet.annotation.WebFilter;
+
+@WebFilter(filterName="LoginFilter", urlPatterns="/15FilterListener/LoginFilter.jsp")
+public class LoginFilter {
+
+}

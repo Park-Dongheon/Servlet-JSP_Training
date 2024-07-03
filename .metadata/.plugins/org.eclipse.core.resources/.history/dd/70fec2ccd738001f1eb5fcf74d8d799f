@@ -1,0 +1,6 @@
+package filter;
+
+@WebFilter(filterName="AnnoFilter", urlPatterns="/15FilterListener/AnnoFilter.jsp")
+public class AnnoFilter {
+
+}

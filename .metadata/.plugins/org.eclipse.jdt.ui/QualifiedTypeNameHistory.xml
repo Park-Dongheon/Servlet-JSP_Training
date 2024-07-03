@@ -16,6 +16,11 @@
     <fullyQualifiedTypeName name="java.io.InputStream"/>
     <fullyQualifiedTypeName name="java.io.FileInputStream"/>
     <fullyQualifiedTypeName name="fileupload.FileUtil"/>
-    <fullyQualifiedTypeName name="utils.JSFunction"/>
     <fullyQualifiedTypeName name="model2.mvcboard.MVCBoardDTO"/>
+    <fullyQualifiedTypeName name="java.io.PrintWriter"/>
+    <fullyQualifiedTypeName name="jakarta.servlet.Filter"/>
+    <fullyQualifiedTypeName name="utils.JSFunction"/>
+    <fullyQualifiedTypeName name="java.util.HashSet"/>
+    <fullyQualifiedTypeName name="java.util.Set"/>
+    <fullyQualifiedTypeName name="jakarta.websocket.Session"/>
 </qualifiedTypeNameHistroy>

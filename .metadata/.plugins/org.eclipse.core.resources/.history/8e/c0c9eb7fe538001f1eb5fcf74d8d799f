@@ -1,0 +1,10 @@
+package websocket;
+
+import java.util.HashSet;
+
+import jakarta.websocket.server.ServerEndpoint;
+
+@ServerEndpoint("/ChatingServer")
+public class ChatServer {
+	private static Set<Session> clients = Collections.synchronizedSet(new HashSet<Session>())
+}
